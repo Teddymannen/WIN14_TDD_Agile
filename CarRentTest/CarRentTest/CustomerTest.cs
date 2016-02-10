@@ -9,7 +9,13 @@ namespace CarRentTest
         [TestInitialize]
         public void Setup()
         {
-
+            var customer = new Customer();
+        }
+        [TestMethod]
+        public void TestCustomerIsBlacklisted_Viktor()
+        {
+            var blacklisted = customer.isBlacklisted();
+            Assert.AreEqual(true, blacklisted);
         }
     }
 }
