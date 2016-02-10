@@ -17,5 +17,11 @@ namespace CarRentTest
 
 
         }
+        [TestMethod]
+        public void TestCarMilesIsNegativeOrZero_Teddy()
+        {
+            var carMiles = 50;
+            Assert.IsFalse(carMiles >= 0);
+        }
     }
 }
