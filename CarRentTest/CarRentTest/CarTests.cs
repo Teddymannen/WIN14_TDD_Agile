@@ -11,7 +11,7 @@ namespace CarRentTest
         {
             SportCar sportcar = new SportCar();
             sportcar.ExtraInsurance = 150;
-            Assert.AreEqual(sportcar.ExtraInsurance, 150);
+            Assert.IsTrue(sportcar.ExtraInsurance > 0);
         }
         [TestMethod]
         public void TestCarMilesIsNegativeOrZero_Teddy()
