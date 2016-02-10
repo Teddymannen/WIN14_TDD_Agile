@@ -4,10 +4,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CarRentTest
 {
     [TestClass]
-    public class UnitTest1
+    public class CustomerTest
     {
         [TestInitialize]
-        public void setup()
+        public void Setup()
+        {
+
+        }
+        [TestMethod]
+        public void TestCustomerIsBlacklisted_Viktor()
         {
 
         }
