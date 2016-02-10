@@ -21,5 +21,14 @@ namespace CarRentTest
             FamilyCar familyCar = new FamilyCar();
             Assert.AreEqual(familyCar.getIsRented(), false);
         }
+
+        [TestMethod]
+        public void TestPaymentAccepted_Simon()
+        {
+            var rent = new Rent();
+
+            rent.PaymentAccepted = true;
+            Assert.IsTrue(rent.PaymentAccepted);
+        }
     }
 }
