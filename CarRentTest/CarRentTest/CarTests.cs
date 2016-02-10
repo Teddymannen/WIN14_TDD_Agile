@@ -4,11 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CarRentTest
 {
     [TestClass]
-    public class SportsCarTest_Theo
+    public class CarTests
     {
         [TestMethod]
-        public void SportCarTest()
+        public void SportCarTest_Theo()
         {
+
+
             SportCar sportcar = new SportCar();
             sportcar.setExtraInsurance(150);
             Assert.IsTrue(sportcar.getExtraInsurance());
