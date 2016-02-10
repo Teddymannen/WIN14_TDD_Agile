@@ -6,9 +6,13 @@ namespace CarRentTest
     [TestClass]
     public class CustomerTest
     {
-        [TestMethod]
         [TestInitialize]
         public void Setup()
+        {
+
+        }
+        [TestMethod]
+        public void TestCustomerIsBlacklisted_Viktor()
         {
 
         }
