@@ -21,7 +21,7 @@
     <packageHasNamedElement>
       <class
         Id="c007bae8-b997-49e3-bc74-7b114ec83fbb"
-        name="Class1"
+        name="Customer"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
