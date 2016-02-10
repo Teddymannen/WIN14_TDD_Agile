@@ -3,6 +3,6 @@
 	TestSetDate(testa datum för tidigt t.ex, assert is equal)
 	TestChooseCar(assert is true för om bilen är tillgänglig + om man har valt biltyp)
 	TestSportCar(assert is true för insurance)
-	TestCarMilesIsNegativeOrZero(assert is false)
+	TestCarMilesIsAboveZero(assert is true)
 	TestTotalRentCost(assert is equal)
 	TestPaymentAccepted(assert is true)

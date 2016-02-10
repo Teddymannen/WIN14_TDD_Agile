@@ -28,5 +28,22 @@ public class Rent
     public double TotalCost { get; set; }
 
     public bool PaymentAccepted { get; set; }
-}
 
+    public double CalcTotal(double m, double d, string c)
+    {
+        var total = 0.0;
+        if (c == "SportCar")
+        {
+            var car = new SportCar();
+            total = car.DailyCost * d + car.MilageCost * m + car.ExtraInsurance;
+
+        }
+        else if (c == "FamilyCar")
+        {
+            var car = new FamilyCar();
+            total = car.DailyCost * d + car.MilageCost * m;
+        }
+        return total;
+
+    }
+}

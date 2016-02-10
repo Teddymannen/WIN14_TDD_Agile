@@ -42,5 +42,23 @@ namespace CarRentTest
                 
 
         }
+        [TestMethod]
+        public void TestTotalRentCostSportCar_Marita()
+        {
+            var rent = new Rent();
+
+            var total = rent.CalcTotal(2, 10, "SportCar");
+            Assert.AreEqual(10, total);
+
+        }
+        [TestMethod]
+        public void TestTotalRentCostFamilyCar_Marita()
+        {
+            var rent = new Rent();
+
+            var total = rent.CalcTotal(3, 20, "FamilyCar");
+            Assert.AreEqual(60, total);
+
+        }
     }
 }
