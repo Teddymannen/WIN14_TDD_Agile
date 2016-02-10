@@ -230,6 +230,18 @@
               <referencedTypeMoniker Id="657c01be-d5c7-4e21-a938-a802ccf44db6" LastKnownName="Car" />
             </type_NamedElement>
           </property>
+          <property Id="6e21055d-f4fe-4778-992c-af9913b3dc0a" name="TotalCost" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3986292c-93a9-4317-bceb-f442802fd510" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="6e561384-57d0-444a-91d5-3251a4d3a1c3" LastKnownName="double" />
+            </type_NamedElement>
+          </property>
+          <property Id="ac1476ff-840d-4c28-81e2-ac062d31937c" name="PaymentAccepted" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b4d7a9e0-e2ee-44c2-8453-c5ee0ccb1514" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a0cefb36-cd93-4b05-9e82-1b4ac946a9b5" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="46d071e8-fb28-41ea-8e9f-c79e031ab87b" name="getDays" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -320,6 +332,37 @@
                   <elementDefinition Id="608dc894-242c-49a4-924d-24802570bb1e" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="3e2884c1-829b-43a3-a503-a3d999a797a4" LastKnownName="DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b15ca1b4-22cd-4889-b8db-b2af704dede1" name="setTotalCost" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="80a4ffa8-8de1-4867-b106-05b142e50c30" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7e48ca1a-e141-42e9-9da4-bf2a1c82aff8" name="double" direction="In" isUnique="false">
+                  <elementDefinition Id="9910407c-1b99-4208-81ed-4e6f2fb2c61c" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="205986de-392c-437b-b905-b50721aa0bba" direction="Return" isUnique="false">
+                  <elementDefinition Id="c503ec24-9f6d-4deb-a12a-91c13755695b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="87641f6a-fb9b-426e-8123-f6ff7c3f7684" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="3a4b0d6b-d260-414f-8d37-8be571ba07ad" name="getTotalCost" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4e1161bd-8749-48a2-9a6d-a12518e7d9da" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="08076bde-d133-4759-8433-9e3376041ce1" direction="Return" isUnique="false">
+                  <elementDefinition Id="06055c4b-afa2-432e-b925-62fbb219ad3d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d114dfa3-ab05-41cd-ad3f-9613793e8b12" LastKnownName="double" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -452,6 +495,16 @@
     <packageHasNamedElement>
       <referencedType Id="bfc1fbdf-d5d6-4877-ac0e-8704a5bd3767" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
         <elementDefinition Id="35cb18c3-f439-4896-9c9c-aea0944c9d97" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6e561384-57d0-444a-91d5-3251a4d3a1c3" name="double" isAbstract="false" isLeaf="false" cachedFullName="double">
+        <elementDefinition Id="d4337747-3318-4a71-9390-6dd922eaf8b1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a0cefb36-cd93-4b05-9e82-1b4ac946a9b5" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="4ec8c964-fd65-455a-9888-92b5aab8b157" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
