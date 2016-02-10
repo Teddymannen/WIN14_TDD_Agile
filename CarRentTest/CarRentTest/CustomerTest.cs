@@ -6,15 +6,16 @@ namespace CarRentTest
     [TestClass]
     public class CustomerTest
     {
+        Customer customer;
         [TestInitialize]
         public void Setup()
         {
-            var customer = new Customer();
+            customer = new Customer();
         }
         [TestMethod]
         public void TestCustomerIsBlacklisted_Viktor()
         {
-            var blacklisted = customer.isBlacklisted();
+            var blacklisted = customer.IsBlacklisted();
             Assert.AreEqual(true, blacklisted);
         }
     }

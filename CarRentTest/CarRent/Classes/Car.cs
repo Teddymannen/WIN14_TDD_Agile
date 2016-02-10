@@ -11,70 +11,14 @@ using System.Text;
 
 public abstract class Car
 {
-	private double DailyCost
-	{
-		get;
-		set;
-	}
+    public double DailyCost { get; set; }
 
-	private double MilageCost
-	{
-		get;
-		set;
-	}
+    public double MilageCost { get; set; }
 
-	private bool IsRented
-	{
-		get;
-		set;
-	}
+    public bool IsRented { get; set; }
 
-	private double ExtraInsurance
-	{
-		get;
-		set;
-	}
-
-	public virtual Rent Rent
-	{
-		get;
-		set;
-	}
-
-	public virtual void setDailyCost(object double)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual double getDailyCost()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual double getMilageCost()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void setMilageCost(object double)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void setExtraInsurance(object double)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual bool getExtraInsurance()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual bool getIsRented()
-	{
-		throw new System.NotImplementedException();
-	}
+    public double ExtraInsurance { get; set; }
+    public double MilesDriven { get; set; }
 
 }
 

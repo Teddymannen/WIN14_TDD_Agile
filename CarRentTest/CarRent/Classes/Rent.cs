@@ -11,75 +11,14 @@ using System.Text;
 
 public class Rent
 {
-	private DateTime StartDate
-	{
-		get;
-		set;
-	}
+    public DateTime StartDate { get; set; }
 
-	private int Days
-	{
-		get;
-		set;
-	}
+    public int Days { get; set; }
 
-	private Car SelectedCar
-	{
-		get;
-		set;
-	}
+    public Car SelectedCar { get; set; }
 
-	private double TotalCost
-	{
-		get;
-		set;
-	}
+    public double TotalCost { get; set; }
 
-	private bool PaymentAccepted
-	{
-		get;
-		set;
-	}
-
-	public virtual int getDays()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void setDays(object int)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual Car getSelectedCar()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void setSelectedCar(object Car)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void setStartDate(object DateTime)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual DateTime getStartDate()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void setTotalCost(object double)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual double getTotalCost()
-	{
-		throw new System.NotImplementedException();
-	}
-
+    public bool PaymentAccepted { get; set; }
 }
 

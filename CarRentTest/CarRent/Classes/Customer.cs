@@ -11,43 +11,23 @@ using System.Text;
 
 public class Customer
 {
-	private bool IsBlacklisted
+    private bool isBlacklisted = true;
+
+    private string name = "Viktor";
+
+	public Rent Rent
 	{
 		get;
 		set;
 	}
-
-	private string Name
+    public bool IsBlacklisted()
 	{
-		get;
-		set;
+        return isBlacklisted;
 	}
 
-	public virtual Rent Rent
+	public string getName()
 	{
-		get;
-		set;
+        return name;
 	}
-
-	public virtual void setIsBlacklisted(object bool)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual bool getIsBlacklisted()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void setName(object string)
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual string getName()
-	{
-		throw new System.NotImplementedException();
-	}
-
 }
 
