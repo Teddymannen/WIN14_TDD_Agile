@@ -1,0 +1,5 @@
+﻿Testfall:
+	TestCustomerIsBlacklisted(assert is true)
+	TestSetDate(testa datum för tidigt t.ex, assert is equal)
+	TestChooseCar(assert is true för om bilen är tillgänglig + om man har valt biltyp)
+	TestSportCar(assert is true för insurance)
