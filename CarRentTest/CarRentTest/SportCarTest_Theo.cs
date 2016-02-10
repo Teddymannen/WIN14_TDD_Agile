@@ -11,5 +11,16 @@ namespace CarRentTest
         {
             
         }
+
+        [TestMethod]
+        public void TestSetDate(DateTime d)
+        {
+            if (d > DateTime.Now)
+            {
+                Assert.AreEqual(DateTime.Now.GetDateTimeFormats(), d);
+            }
+        }
+
     }
+
 }

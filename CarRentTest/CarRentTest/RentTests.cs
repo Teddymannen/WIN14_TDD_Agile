@@ -30,5 +30,16 @@ namespace CarRentTest
             rent.PaymentAccepted = true;
             Assert.IsTrue(rent.PaymentAccepted);
         }
+
+        [TestMethod]
+        public void TestSetDate_Ayaz(DateTime d)
+        {
+            //TestSetDate(testa datum för tidigt t.ex, assert is equal)
+            if (d > DateTime.Now || d == DateTime.Now.AddYears(2016))
+            {
+                Assert.AreEqual(DateTime.Now.GetDateTimeFormats(), d);
+            }
+            
+        }
     }
 }
