@@ -4,12 +4,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CarRentTest
 {
     [TestClass]
-    public class UnitTest1
+    public class SportCarTest_Theo
     {
-        [TestInitialize]
-        public void setup()
+        [TestMethod]
+        public void TestMethod1()
         {
-
+            
         }
     }
 }
