@@ -9,13 +9,9 @@ namespace CarRentTest
         [TestMethod]
         public void SportCarTest_Theo()
         {
-
-
             SportCar sportcar = new SportCar();
             sportcar.setExtraInsurance(150);
             Assert.IsTrue(sportcar.getExtraInsurance());
-
-
         }
         [TestMethod]
         public void TestCarMilesIsNegativeOrZero_Teddy()
