@@ -143,8 +143,8 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="53ea376e-fd9f-4819-a552-6033e1f6f8ed" name="bool" direction="In" isUnique="false">
-                  <elementDefinition Id="57b55ca9-e71b-47f0-95ff-b8607a7b449f" />
+                <parameter Id="7095307a-efa5-474d-8b11-5ed0dc67e439" name="double" direction="In" isUnique="false">
+                  <elementDefinition Id="ab703e96-e94f-4391-b73c-1653ea3bbc3a" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
