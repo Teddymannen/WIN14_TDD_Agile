@@ -307,8 +307,8 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="57b55ca9-e71b-47f0-95ff-b8607a7b449f"
-                  name="bool"
+                  Id="ab703e96-e94f-4391-b73c-1653ea3bbc3a"
+                  name="double"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
