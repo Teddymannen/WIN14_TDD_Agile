@@ -18,6 +18,7 @@ public abstract class Car
     public bool IsRented { get; set; }
 
     public double ExtraInsurance { get; set; }
+    public double MilesDriven { get; set; }
 
 }
 
