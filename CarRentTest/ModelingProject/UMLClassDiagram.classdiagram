@@ -2,10 +2,458 @@
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="f74319be-67d1-48d5-bb83-8371dc9d5ef0" name="UMLClassDiagram" linkedPackageId="ba0cff46-51ab-4a53-9a26-a3cfdcdd38f6" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
-      <class Id="564a9448-f485-4419-9f5a-0e04570e4351" name="Customer" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="564a9448-f485-4419-9f5a-0e04570e4351" name="Car" isAbstract="true" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="c007bae8-b997-49e3-bc74-7b114ec83fbb" />
+        <suppliersInternal>
+          <dependency Id="0836fef6-1bac-4c5a-9e49-121a317ace0f">
+            <classMoniker Id="7be97813-ec1e-49fc-a474-fa154fa5247a" LastKnownName="SportCar" />
+            <elementDefinition Id="0a61fc0e-7078-40ff-a079-55da70b5f302" />
+          </dependency>
+          <dependency Id="db4e8121-ebdd-4af3-8735-f7dd2bc908fd">
+            <classMoniker Id="2cedcf9d-963f-4172-8099-bc9890d4bb67" LastKnownName="FamilyCar" />
+            <elementDefinition Id="f9bbdaec-af36-4319-81b3-5972cb52ac3a" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="6532edd6-d8ca-4936-93aa-1c782a18aee4" isDerived="false" sourceEndRoleName="Car" targetEndRoleName="Rent" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d1bb1d7a-289e-408f-af80-d2f82fb5b5eb" LastKnownName="Rent" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c311fa79-a4ec-4adf-b73f-fb396ace1282" name="Car" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="55176b9b-a868-47ce-a5f3-539500ef8482" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eb7d2396-e038-45d8-9ef6-5c2bcb631560" name="Rent" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="60c2a205-ced2-48df-87c2-8d0ecee0a21f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="acd82fef-5b8b-4448-81f6-2590d1437c99" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="fcf1df42-ef8b-47e3-9e1c-7637a7240e5c" name="DailyCost" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7cf9aa04-5a12-4b64-bd94-14cb6bd9935e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d114dfa3-ab05-41cd-ad3f-9613793e8b12" LastKnownName="double" />
+            </type_NamedElement>
+          </property>
+          <property Id="bc62b7e1-1d8c-4690-bddf-8f926838ae91" name="MilageCost" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="63b6f619-20d0-41b2-a743-6e1474718cdd" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="fea60f71-eca3-469e-a106-99db4c8d24fe" LastKnownName="double" />
+            </type_NamedElement>
+          </property>
+          <property Id="2217f451-9597-4e52-ba12-71c2bea758f9" name="IsRented" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b937aae0-0bd0-43e1-84ab-c08b3971e485" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5c41a710-6ba8-4195-ac9f-06f7942ec45e" LastKnownName="bool" />
+            </type_NamedElement>
+            <defaultValue>
+              <literalString Id="2efaba1c-2eee-4ecb-9a09-53dd855205d1" name="DefaultValue" value="false">
+                <elementDefinition Id="47fd0367-866e-4a42-9bf1-5e68ee806ff2" />
+              </literalString>
+            </defaultValue>
+          </property>
+          <property Id="61953931-0bd7-4820-a53d-9d7277fa1f8f" name="ExtraInsurance" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dda75900-0f85-4f8e-b629-bbf07456b4cd" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="205be61c-8a92-4cd8-9a39-56f43281e229" LastKnownName="double" />
+            </type_NamedElement>
+            <defaultValue>
+              <literalString Id="2b84b2ce-c8bb-4414-af59-d8bb507684a7" name="DefaultValue" value="0">
+                <elementDefinition Id="9078115b-033a-4b1d-bb20-28cb7a993c0f" />
+              </literalString>
+            </defaultValue>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="dfc98aa0-8133-4ebd-ac94-7f234592e42c" name="setDailyCost" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a0bc6f25-46fb-4118-9ca0-ee2d1dd542ac" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e3fa0bd8-a069-4218-847e-6f2f4a98f883" direction="Return" isUnique="false">
+                  <elementDefinition Id="63ee739d-1b8b-443d-9fcc-1820761e78f1" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="87641f6a-fb9b-426e-8123-f6ff7c3f7684" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9e3a1b38-9869-41ad-8737-6a18b0ae7941" name="double" direction="In" isUnique="false">
+                  <elementDefinition Id="0cec34b2-cd4c-4797-8318-1806dfec45c4" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b5adc73d-ee71-4f06-b39a-0ef3a11f655d" name="getDailyCost" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3b74a3c2-a5fc-4ce3-be40-8b1ac33693fd" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="95394daf-5fed-4ba7-bc6a-4fd1d304a14b" direction="Return" isUnique="false">
+                  <elementDefinition Id="09549d47-853c-4a86-8b36-f136f6aa4644" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d114dfa3-ab05-41cd-ad3f-9613793e8b12" LastKnownName="double" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="04615b10-b6e1-401e-8c64-ee404131fd03" name="getMilageCost" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="29b42549-21cd-42f2-9175-9ddd6223b20b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="90f1d028-3811-4a23-9b33-443423bda56f" direction="Return" isUnique="false">
+                  <elementDefinition Id="55ff94fb-5f27-443b-bce5-65ca7dfa99ea" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d114dfa3-ab05-41cd-ad3f-9613793e8b12" LastKnownName="double" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b587fdec-617c-4d03-bbcd-1aaf2a6c22ed" name="setMilageCost" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="59c0e34c-4108-4af6-b2bc-6e362a176545" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b96309dc-ace7-4e10-b647-05c0feb38aaf" direction="Return" isUnique="false">
+                  <elementDefinition Id="94f5a08c-6eda-498c-99d5-ef3ec6a614d9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="87641f6a-fb9b-426e-8123-f6ff7c3f7684" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="62cc5741-0fd9-4f7b-860a-2d4a130e4b43" name="double" direction="In" isUnique="false">
+                  <elementDefinition Id="e62c63fe-8f2a-44f6-842d-e0cb4cdd63c8" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="97eec5e1-3130-4d2a-a5fb-b8edaf42c38d" name="setExtraInsurance" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="eb41a759-2d88-4db9-b2ae-f439f88564ab" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="43da3e49-9d3e-4ecf-8639-053c3279c4bc" direction="Return" isUnique="false">
+                  <elementDefinition Id="cd47a7d6-3246-454a-852b-9514389aba36" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="87641f6a-fb9b-426e-8123-f6ff7c3f7684" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="53ea376e-fd9f-4819-a552-6033e1f6f8ed" name="bool" direction="In" isUnique="false">
+                  <elementDefinition Id="57b55ca9-e71b-47f0-95ff-b8607a7b449f" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c8da0f3e-1219-445d-80b3-76b568ac8c8b" name="getExtraInsurance" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7659b1ba-7943-4055-83ff-d9aed4a81fbb" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b7fba252-8b4b-4fd2-b252-ae01e737ecf1" direction="Return" isUnique="false">
+                  <elementDefinition Id="4074611d-ef66-406b-bc73-e052c3ce9267" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="5c41a710-6ba8-4195-ac9f-06f7942ec45e" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="3cf884e0-0896-4d63-87d1-248fbb524058" name="getIsRented" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8c05cd42-3c5e-47fa-8b34-379cd833b301" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="01d2c614-2cc1-4cea-8021-61871c6b80b8" direction="Return" isUnique="false">
+                  <elementDefinition Id="ab95b194-740d-417c-bb10-d9e06ad5d9f2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="5c41a710-6ba8-4195-ac9f-06f7942ec45e" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="87641f6a-fb9b-426e-8123-f6ff7c3f7684" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="97ddbe92-6a6c-41a9-a7e7-c018cd1730cc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7be97813-ec1e-49fc-a474-fa154fa5247a" name="SportCar" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4df80615-a364-4d49-99cd-73c3f4dcb6f5" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2cedcf9d-963f-4172-8099-bc9890d4bb67" name="FamilyCar" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1f167cec-303f-4108-a8c2-09e8184d2ca4" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="5c41a710-6ba8-4195-ac9f-06f7942ec45e" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="4ec8c964-fd65-455a-9888-92b5aab8b157" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d114dfa3-ab05-41cd-ad3f-9613793e8b12" name="double" isAbstract="false" isLeaf="false" cachedFullName="double">
+        <elementDefinition Id="d4337747-3318-4a71-9390-6dd922eaf8b1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fea60f71-eca3-469e-a106-99db4c8d24fe" name="double" isAbstract="false" isLeaf="false" cachedFullName="double">
+        <elementDefinition Id="d4337747-3318-4a71-9390-6dd922eaf8b1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d1bb1d7a-289e-408f-af80-d2f82fb5b5eb" name="Rent" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bf3e36ea-70c9-4ecb-8860-8b7de5c2b18c" />
+        <ownedAttributesInternal>
+          <property Id="ec148809-ec84-485f-afdd-c8bd5569c265" name="StartDate" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a8cccbc7-ada9-4ecf-bb34-ccd700275db3" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="3e2884c1-829b-43a3-a503-a3d999a797a4" LastKnownName="DateTime" />
+            </type_NamedElement>
+          </property>
+          <property Id="e220eb45-de7e-4744-8986-d32e96f1454a" name="Days" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0ee65a04-2d15-424f-99f7-d3e0d1c04842" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="44de4349-21f0-47d6-9d59-9f617d3ec50c" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="430525f3-6d71-48e2-aac9-8516e0d32c92" name="SelectedCar" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d315ae24-5b09-42c1-8e52-fe4530835aa7" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="657c01be-d5c7-4e21-a938-a802ccf44db6" LastKnownName="Car" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="46d071e8-fb28-41ea-8e9f-c79e031ab87b" name="getDays" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cb91b403-e226-441c-aaeb-6792a2ada06a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3383a7ba-4899-48c4-bf43-6c93149c59cd" direction="Return" isUnique="false">
+                  <elementDefinition Id="bffd0c98-75bc-474c-8de7-39b9cf668c55" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="44de4349-21f0-47d6-9d59-9f617d3ec50c" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="cdcacd66-a34b-4666-83ec-423ae1d0c360" name="setDays" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2ba41935-ca7d-49b3-8bc4-c618f9a5ce60" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e7fd01d0-4fb2-470f-a402-b3749b6610d4" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="d20d6243-0529-4fd0-a531-f22b334f8de1" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2501216a-579c-4db5-8bb1-ff633dde516a" direction="Return" isUnique="false">
+                  <elementDefinition Id="c9649798-9672-4de9-8e35-f2be51aae058" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="87641f6a-fb9b-426e-8123-f6ff7c3f7684" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="303a010b-442f-4c74-b58e-9a31de510500" name="getSelectedCar" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ec603eed-006e-45b1-99a8-1d845425b186" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7cdc24af-552f-42c1-8eb3-90f1a5322d6b" direction="Return" isUnique="false">
+                  <elementDefinition Id="f4e02eae-b41a-4298-ab86-e6c4d4b2b61a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="657c01be-d5c7-4e21-a938-a802ccf44db6" LastKnownName="Car" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8ab63c81-df5c-4418-813c-6b18b82dbfbb" name="setSelectedCar" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="91b37737-6e07-4d97-af2d-5ca76d58b4e2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="35b7ebf3-6416-426d-9f5d-6d3c2b5c298d" name="Car" direction="In" isUnique="false">
+                  <elementDefinition Id="c5b5ec68-1541-4d10-8dbb-11ba679fc7f8" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bad07b4e-e2ae-4236-a966-783937998f5a" direction="Return" isUnique="false">
+                  <elementDefinition Id="ae047087-6047-4388-9580-8fd378860d3c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="87641f6a-fb9b-426e-8123-f6ff7c3f7684" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4df28f14-ead1-4ead-9df8-a0b0aeca41f8" name="setStartDate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fdae2c5a-3ce7-400c-bbcd-cd33f922a841" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8a72babb-033b-4923-a2fd-ca4def2af185" name="DateTime" direction="In" isUnique="false">
+                  <elementDefinition Id="dbb8fe33-feee-47ef-8fb1-5808a2ec15d8" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6e257380-fce4-4c0b-89b5-d15bc76326af" direction="Return" isUnique="false">
+                  <elementDefinition Id="7587ab50-88ff-4abc-b28e-8a9c40cd25ab" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="87641f6a-fb9b-426e-8123-f6ff7c3f7684" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="40d22fc1-e333-41bc-8a7d-dd5d6c543baa" name="getStartDate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e21f7612-ccf2-4b81-923b-ddb3610e367c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="85db1244-1c85-4348-a874-42a3e9b78c16" direction="Return" isUnique="false">
+                  <elementDefinition Id="608dc894-242c-49a4-924d-24802570bb1e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="3e2884c1-829b-43a3-a503-a3d999a797a4" LastKnownName="DateTime" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="44de4349-21f0-47d6-9d59-9f617d3ec50c" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="0291e2b1-3831-48fa-9eb7-9b1c04334df7" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3e2884c1-829b-43a3-a503-a3d999a797a4" name="DateTime" isAbstract="false" isLeaf="false" cachedFullName="DateTime">
+        <elementDefinition Id="b2e43998-b3a3-4797-9a61-ef7c11b2eb3c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="657c01be-d5c7-4e21-a938-a802ccf44db6" name="Car" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject::Car">
+        <elementDefinition Id="c007bae8-b997-49e3-bc74-7b114ec83fbb" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f6ddb111-d82b-413c-8215-1c27eace26c2" name="Customer" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="59482600-1988-4e64-9051-148c528240d6" />
+        <targetEnds>
+          <association Id="5fb3ecbd-a65a-4cc3-b46a-ae45d88ce3c1" isDerived="false" sourceEndRoleName="Customer" targetEndRoleName="Rent" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d1bb1d7a-289e-408f-af80-d2f82fb5b5eb" LastKnownName="Rent" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2f89ba63-6438-4956-9401-02288a4aa1e9" name="Customer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b8889c3b-7df8-4ddb-8708-e240465f088c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1520002b-70ab-4ef6-98a3-8da412416f67" name="Rent" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="2a84166a-d70f-402b-8b86-c997503dea7f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="17b2873a-2b3a-4446-9974-f5d1446e2b25" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="db6ff3a9-b68f-45a6-bb0e-b5f0b46d69eb" name="IsBlacklisted" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a2ac891f-5516-44d0-b936-8a4cbc6f806b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5c41a710-6ba8-4195-ac9f-06f7942ec45e" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="781fe2dc-184e-4edb-8fe5-94e05d7fecd4" name="Name" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8b4128ce-9fd0-4b7a-b767-57ce1df3e50b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="bfc1fbdf-d5d6-4877-ac0e-8704a5bd3767" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="3a64932c-69fe-4789-a817-13db72c963be" name="setIsBlacklisted" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="026a5832-2a30-4bab-8a68-b7b4a36d0e28" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8add8f56-d554-47b8-ad05-003a2e83294c" name="bool" direction="In" isUnique="false">
+                  <elementDefinition Id="c68b0285-0f19-4dfa-8bbc-c23c333af5f1" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7b0e2f56-cf49-4808-b869-6ceedd694ae2" direction="Return" isUnique="false">
+                  <elementDefinition Id="6f323666-0452-4ab0-a68b-9c6dc618768d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="87641f6a-fb9b-426e-8123-f6ff7c3f7684" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a6e68eeb-092d-4032-a86a-8f94a78d052e" name="getIsBlacklisted" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a1f72db6-3830-4471-b6b3-08d12e6280ba" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e0deb9e2-54a9-4934-80d6-1f8113afe443" direction="Return" isUnique="false">
+                  <elementDefinition Id="ac5cf258-ded8-49c7-893e-6cb08d6a994a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="5c41a710-6ba8-4195-ac9f-06f7942ec45e" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="db380f4b-a7a1-48f9-bbf1-75acc25a38ba" name="setName" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9a049880-c702-46e7-b24e-0833ab5eafce" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6243b56f-3c7f-45b7-8f49-a175be218c00" name="string" direction="In" isUnique="false">
+                  <elementDefinition Id="b0b1690d-6b5e-491c-8915-bd5e3e1a8915" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="dd09c8cb-60c5-4072-8420-2568a0d528c2" direction="Return" isUnique="false">
+                  <elementDefinition Id="7cd7ea2b-404e-4846-94ab-bccc3f22a0b7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="87641f6a-fb9b-426e-8123-f6ff7c3f7684" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="88801d24-521e-421d-83cf-f12eddee7cd3" name="getName" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a79f9aa9-3d1d-4180-aa78-557690aafdd2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b26ce3d3-0dd0-4d11-87b7-4ed41f8cc276" direction="Return" isUnique="false">
+                  <elementDefinition Id="0d6ba76b-0397-4d07-b2b6-1a929e2934e7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="bfc1fbdf-d5d6-4877-ac0e-8704a5bd3767" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="205be61c-8a92-4cd8-9a39-56f43281e229" name="double" isAbstract="false" isLeaf="false" cachedFullName="double">
+        <elementDefinition Id="d4337747-3318-4a71-9390-6dd922eaf8b1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bfc1fbdf-d5d6-4877-ac0e-8704a5bd3767" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="35cb18c3-f439-4896-9c9c-aea0944c9d97" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="ba0cff46-51ab-4a53-9a26-a3cfdcdd38f6" name="ModelingProject">
     <elementDefinition Id="6942d49d-92e3-4c4c-b75c-aa05d21ad8a6" />
