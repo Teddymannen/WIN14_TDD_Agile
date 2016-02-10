@@ -16,10 +16,10 @@ namespace CarRentTest
         {
             // assert is true för om bilen är tillgänglig + om man har valt biltyp
             SportCar sportCar = new SportCar();
-            Assert.AreEqual(sportCar.getIsRented(), false);
+            Assert.AreEqual(sportCar.IsRented, false);
 
             FamilyCar familyCar = new FamilyCar();
-            Assert.AreEqual(familyCar.getIsRented(), false);
+            Assert.AreEqual(familyCar.IsRented, false);
         }
 
         [TestMethod]
