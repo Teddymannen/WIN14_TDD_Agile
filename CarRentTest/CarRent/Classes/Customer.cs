@@ -11,24 +11,23 @@ using System.Text;
 
 public class Customer
 {
-    private bool IsBlacklisted = true;
+    private bool isBlacklisted = true;
 
-    private string Name = "Viktor";
+    private string name = "Viktor";
 
 	public Rent Rent
 	{
 		get;
 		set;
 	}
-
-	public bool getIsBlacklisted()
+    public bool IsBlacklisted()
 	{
-        return IsBlacklisted;
+        return isBlacklisted;
 	}
 
 	public string getName()
 	{
-        return Name;
+        return name;
 	}
 }
 

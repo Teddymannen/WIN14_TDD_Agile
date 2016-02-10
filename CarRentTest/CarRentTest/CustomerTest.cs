@@ -15,7 +15,7 @@ namespace CarRentTest
         [TestMethod]
         public void TestCustomerIsBlacklisted_Viktor()
         {
-            var blacklisted = customer.getIsBlacklisted();
+            var blacklisted = customer.IsBlacklisted();
             Assert.AreEqual(true, blacklisted);
         }
     }
