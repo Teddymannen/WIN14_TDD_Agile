@@ -32,14 +32,15 @@ namespace CarRentTest
         }
 
         [TestMethod]
-        public void TestSetDate_Ayaz(DateTime d)
+        public void TestSetDate_Ayaz()
         {
             //TestSetDate(testa datum för tidigt t.ex, assert is equal)
-            if (d > DateTime.Now || d == DateTime.Now.AddYears(2016))
-            {
-                Assert.AreEqual(DateTime.Now.GetDateTimeFormats(), d);
-            }
-            
+            var rent = new Rent();
+
+            rent.StartDate = new DateTime(2016, 02, 10);           
+            Assert.AreEqual(new DateTime(2016, 02, 10), rent.StartDate);
+                
+
         }
     }
 }

@@ -11,7 +11,15 @@ using System.Text;
 
 public class Rent
 {
-    public DateTime StartDate { get; set; }
+    private DateTime startDate;
+    public DateTime StartDate {
+        get
+        { return startDate; }
+        set
+        {
+               startDate = value; 
+        }
+    }
 
     public int Days { get; set; }
 
