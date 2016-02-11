@@ -25,7 +25,7 @@ public class Customer
         return isBlacklisted;
 	}
 
-	public string getName()
+	public string Name()
 	{
         return name;
 	}
