@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 public class Rent
 {
@@ -30,19 +31,29 @@ public class Rent
 
     public bool PaymentAccepted { get; set; }
 
-    public double CalcTotal(double m, double d, string c)
+    public double CalcTotal(double milage, double days, string c)
     {
         var total = 0.0;
-        if (c == "SportCar")
+        try 
         {
-            var car = new SportCar();
-            total = car.DailyCost * d + car.MilageCost * m + car.ExtraInsurance;
+            if (c == "SportCar" && milage > 0 && days > 0)
+            {
+                var car = new SportCar();
+                total = car.DailyCost * days + car.MilageCost * milage + 150;
 
+            }
+            else if (c == "FamilyCar" && milage > 0 && days > 0)
+            {
+                var car = new FamilyCar();
+                total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance;
+            }
+            
         }
-        else if (c == "FamilyCar")
+        catch (FormatException)
         {
-            var car = new FamilyCar();
-            total = car.DailyCost * d + car.MilageCost * m;
+            
+            MessageBox.Show("You have entered non-numeric characters");
+            
         }
         return total;
     }
