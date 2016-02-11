@@ -138,5 +138,25 @@ namespace CarRentTest
 
         }
 
+        [TestMethod]
+        public void TestEarlyReturn_Fredrik()
+        {
+            // Förvald hyrtid
+            rent.StartDate = DateTime.Parse("2016, 06, 01");
+            rent.EndDate = DateTime.Parse("2016, 06, 05");
+
+            var costWithoutDiscount = rent.CalcTotal(50, 4, "FamilyCar");
+
+            // Återlämningsdatum 1 dag tidigare
+            rent.CalculateDiscount(DateTime.Parse("2016, 06, 04"));
+
+            var costWithDiscount = rent.CalcTotal(50, 4, "FamilyCar");
+
+            Assert.AreEqual(costWithoutDiscount, 500);
+            // Rabatten ska vara 1 dag á 100
+            Assert.AreEqual(costWithDiscount, 500 - 1*100);
+
+        }
+
     }
 }
