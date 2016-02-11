@@ -19,7 +19,10 @@ namespace CarRent
 
         private void OkBtn_Click(object sender, EventArgs e)
         {
-
+            ReturnCar frm = new ReturnCar();
+            this.Visible = false;
+            frm.ShowDialog();
+            this.Close();
         }
     }
 }
