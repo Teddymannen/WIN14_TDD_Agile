@@ -102,7 +102,7 @@ namespace CarRentTest
             rent.Days = 4;
             var costWithoutPenalty = rent.CalcTotal(50, 4, "FamilyCar");
             var costWithPenalty = rent.ReturnCar(50, "FamilyCar", DateTime.Parse("2016, 06, 30"));
-
+            
             Assert.AreEqual(costWithoutPenalty * 2, costWithPenalty);
         }
     }

@@ -19,7 +19,7 @@ namespace CarRent
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
+            ChooseCar frm = new ChooseCar();
             Login lgn = new Login();
             if (tB_username.Text == "Klas" && tB_Password.Text == "klas123")
             {
