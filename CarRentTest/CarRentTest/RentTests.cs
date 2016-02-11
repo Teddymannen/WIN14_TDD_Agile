@@ -22,15 +22,13 @@ namespace CarRentTest
         [TestMethod]
         public void TestChooseCar_Fredrik()
         {
-            // assert is true för om bilen är tillgänglig + om man har valt biltyp
-
-            var rent = new Rent();
-
+            // Välj familjebil och kolla att den är ledig
             var familyCar = rent.ChooseCar("familycar");
-            Assert.AreEqual(familyCar.IsRented, false);
+            Assert.IsFalse(familyCar.IsRented);
 
+            // Välj sportbil och kolla att den är ledig
             var sportCar = rent.ChooseCar("sportcar");
-            Assert.AreEqual(sportCar.IsRented, false);
+            Assert.IsFalse(sportCar.IsRented);
         }
 
         [TestMethod]
