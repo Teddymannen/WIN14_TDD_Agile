@@ -11,17 +11,17 @@ using System.Text;
 
 public class SportCar : Car
 {
-    double Value;
+    double Insurance;
     public override double ExtraInsurance
     {
         get
         {
-            if (Value > 150)
-                return Value;
+            if (Insurance > 150)
+                return Insurance;
             else
                 return 150;
         }
-        set { Value = value; }
+        set { Insurance = value; }
     }
 }
 
