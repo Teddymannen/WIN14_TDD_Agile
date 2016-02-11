@@ -39,13 +39,16 @@ public class Rent
     }
     public DateTime setDate(DateTime d)
     {
-        if (d >= DateTime.Today)
-        {
-            return d;
+       
+            if (d >= DateTime.Today)
+            {
+                return d;
+            }
+       else
+            {
+            throw new Exception("Time Error");
+            }
+
         }
-        else
-        {
-            throw new Exception("error");
-        }
-    }
+
 }
