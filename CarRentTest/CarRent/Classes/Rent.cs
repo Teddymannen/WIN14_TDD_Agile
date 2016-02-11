@@ -78,6 +78,7 @@ public class Rent
        
         if (d >= DateTime.Today)
         {
+      
             return d;
         }
         else
