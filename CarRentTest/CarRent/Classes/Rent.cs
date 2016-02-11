@@ -20,15 +20,6 @@ public class Rent
         sportCar = new SportCar();
     }
 
-    private DateTime startDate;
-    public DateTime StartDate {
-        get
-        { return startDate; }
-        set
-        {
-               startDate = value; 
-        }
-    }
     public DateTime StartDate { get; set; }
 
     public int Days { get; set; }
