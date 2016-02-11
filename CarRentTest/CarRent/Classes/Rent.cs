@@ -60,6 +60,11 @@ public class Rent
 
     public Car ChooseCar(string carType)
     {
+        if(carType == null)
+        {
+            throw new ArgumentNullException();
+        }
+
         if(carType == "familycar")
         {
             return familyCar;
@@ -68,6 +73,9 @@ public class Rent
         {
             return sportCar;
         }
-        return null;
+        else
+        {
+            throw new Exception(String.Format("{0} är ingen giltig biltyp", carType));
+        }
     }
 }

@@ -32,6 +32,29 @@ namespace CarRentTest
         }
 
         [TestMethod]
+        [ExpectedException(typeof(System.ArgumentNullException))]
+        public void TestChooseCarWithNullArgument_Fredrik()
+        {
+            // Testa välja bil med null parameter
+            var car = rent.ChooseCar(null);
+        }
+
+        [TestMethod]
+        public void TestChooseCarWithUnknownCarType_Fredrik()
+        {
+            try
+            {
+                // Testa välja bil med okänd biltyp
+                var car = rent.ChooseCar("Trabant");
+            }
+            catch(Exception e)
+            {
+                // Fånga upp och kolla att felmeddelandet är korrekt
+                Assert.AreEqual("Trabant är ingen giltig biltyp", e.Message);
+            }
+        }
+
+        [TestMethod]
         public void TestPaymentAccepted_Simon()
         {
             rent.PaymentAccepted = true;
