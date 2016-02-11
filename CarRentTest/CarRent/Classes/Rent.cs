@@ -15,6 +15,7 @@ public class Rent
     FamilyCar familyCar;
     SportCar sportCar;
     double penaltyCost;
+    double discount;
 
     public Rent()
     {
@@ -47,13 +48,13 @@ public class Rent
                 {
                     var car = new SportCar();
 
-                    total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance + penaltyCost;
+                    total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance + penaltyCost + discount;
 
                 }
                 else if (c == "FamilyCar")
                 {
                     var car = new FamilyCar();
-                    total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance + penaltyCost;
+                    total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance + penaltyCost + discount;
                 }
                 else
                 {
@@ -77,6 +78,7 @@ public class Rent
        
         if (d >= DateTime.Today)
         {
+      
             return d;
         }
         else
@@ -112,12 +114,20 @@ public class Rent
         }
     }
 
-    public void CalculatePenalty(DateTime returnDate)
+    public void CalculatePenaltyOrDiscount(DateTime returnDate)
     {
         calcDaysRent(StartDate, EndDate);
         DateTime endDate = StartDate.AddDays(Days);
         TimeSpan dt = returnDate - endDate;
         var numberOfDaysOverdue = dt.TotalDays;
-        penaltyCost = numberOfDaysOverdue * 50;
+        if(numberOfDaysOverdue > 0)
+        {
+            penaltyCost = numberOfDaysOverdue * 200;
+        }
+        else if (numberOfDaysOverdue < 0)
+        {
+            discount = numberOfDaysOverdue * 100;
+        }
     }
+
 }

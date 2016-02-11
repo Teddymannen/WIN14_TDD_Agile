@@ -78,19 +78,23 @@ namespace CarRentTest
         public void TestSetDate_Ayaz()
         {
             //TestSetDate(testa datum för tidigt t.ex, assert is equal)
-            //TestSetData(t.ex: IsNotNull, Olika format, store an idag datum)
-            rent.StartDate = DateTime.Parse("2016, 02, 11"); 
-
-            var format1 = DateTime.Parse("11/02/2016");
-            var format2 = DateTime.Parse("11.02.2016");
-            var format3 = DateTime.Parse("11-02-2016");
-
+            rent.StartDate = DateTime.Parse("2016, 02, 11");
             Assert.AreEqual(DateTime.Today, rent.StartDate);
-            Assert.AreNotEqual(format1, rent.StartDate);
-            Assert.AreNotEqual(format2, rent.StartDate);
-            Assert.AreNotEqual(format3, rent.StartDate);
-       
+
+            var format1 = DateTime.Parse("2016 02 11");
+            var format2 = DateTime.Parse("2016/02/11");
+
+            Assert.AreEqual(format1, rent.StartDate);
+            Assert.AreEqual(format2, rent.StartDate);
+            
+            //var format3 = DateTime.Parse("11/02/2016");
+            //var format4 = DateTime.Parse("11.02.2016");
+
+            //Assert.AreEqual(format3, rent.StartDate);
+            //Assert.AreEqual(format4, rent.StartDate);
+            
         }
+
         [TestMethod]
         public void TestTotalRentCostSportCar_Marita()
         {
@@ -128,13 +132,33 @@ namespace CarRentTest
             var costWithoutPenalty = rent.CalcTotal(50, 4, "FamilyCar");
 
             // Återlämningsdatum som gått över tiden med 25 dagar
-            rent.CalculatePenalty(DateTime.Parse("2016, 06, 30"));
+            rent.CalculatePenaltyOrDiscount(DateTime.Parse("2016, 06, 30"));
 
             var costWithPenalty = rent.CalcTotal(50, 4, "FamilyCar");
 
-            Assert.AreEqual(costWithoutPenalty, 500);
-            // Penalty ska vara 50 x 25 extra (25 dagar á 50)
-            Assert.AreEqual(costWithPenalty, 500 + 25*50);
+            Assert.AreEqual(500, costWithoutPenalty);
+            // Penalty ska vara 200 x 25 extra (25 dagar á 200)
+            Assert.AreEqual(500 + 25 * 200, costWithPenalty);
+
+        }
+
+        [TestMethod]
+        public void TestEarlyReturn_Fredrik()
+        {
+            // Förvald hyrtid
+            rent.StartDate = DateTime.Parse("2016, 06, 01");
+            rent.EndDate = DateTime.Parse("2016, 06, 05");
+
+            var costWithoutDiscount = rent.CalcTotal(50, 4, "FamilyCar");
+
+            // Återlämningsdatum 1 dag tidigare
+            rent.CalculatePenaltyOrDiscount(DateTime.Parse("2016, 06, 04"));
+
+            var costWithDiscount = rent.CalcTotal(50, 4, "FamilyCar");
+
+            Assert.AreEqual(500, costWithoutDiscount);
+            // Rabatten ska vara 1 dag á 100
+            Assert.AreEqual(500 - 1*100, costWithDiscount);
 
         }
 
