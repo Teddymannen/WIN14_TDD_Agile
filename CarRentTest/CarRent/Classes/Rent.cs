@@ -14,6 +14,7 @@ public class Rent
 {
     FamilyCar familyCar;
     SportCar sportCar;
+    double penaltyCost;
 
     public Rent()
     {
@@ -37,7 +38,7 @@ public class Rent
     
 
     public double CalcTotal(double milage, double days, string c)
-    {
+    {        
         var total = 0.0;
         try 
         {
@@ -100,5 +101,13 @@ public class Rent
         {
             throw new ArgumentException(String.Format("{0} är ingen giltig biltyp", carType));
         }
+    }
+
+    public void CalculatePenalty(DateTime returnDate)
+    {
+        DateTime endDate = StartDate.AddDays(Days);
+        TimeSpan dt = returnDate - endDate;
+        var numberOfDaysOverdue = dt.TotalDays;
+        penaltyCost = numberOfDaysOverdue * 50;
     }
 }
