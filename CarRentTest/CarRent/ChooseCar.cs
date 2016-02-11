@@ -21,5 +21,13 @@ namespace CarRent
         {
 
         }
+
+        private void rentBtn_Click(object sender, EventArgs e)
+        {
+            Confirmation frm = new Confirmation();
+            this.Visible = false;
+            frm.ShowDialog();
+            this.Close();
+        }
     }
 }
