@@ -37,11 +37,11 @@ namespace CarRentTest
             //TestSetDate(testa datum för tidigt t.ex, assert is equal)
             var rent = new Rent();
 
-            rent.StartDate = new DateTime(2016, 02, 10);           
-            Assert.AreEqual(new DateTime(2016, 02, 10), rent.StartDate);
-                
+            DateTime date =  rent.setDate(DateTime.Parse("2016-02-10"));
+            Assert.AreEqual(DateTime.Today, date);       
 
         }
+
         [TestMethod]
         public void TestTotalRentCostSportCar_Marita()
         {
