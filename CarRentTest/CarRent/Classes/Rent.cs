@@ -15,6 +15,7 @@ public class Rent
     FamilyCar familyCar;
     SportCar sportCar;
     double penaltyCost;
+    double discount;
 
     public Rent()
     {
@@ -112,12 +113,20 @@ public class Rent
         }
     }
 
-    public void CalculatePenalty(DateTime returnDate)
+    public void CalculatePenaltyOrDiscount(DateTime returnDate)
     {
         calcDaysRent(StartDate, EndDate);
         DateTime endDate = StartDate.AddDays(Days);
         TimeSpan dt = returnDate - endDate;
         var numberOfDaysOverdue = dt.TotalDays;
-        penaltyCost = numberOfDaysOverdue * 50;
+        if(numberOfDaysOverdue > 0)
+        {
+            penaltyCost = numberOfDaysOverdue * 50;
+        }
+        else if (numberOfDaysOverdue < 0)
+        {
+            discount = numberOfDaysOverdue * 100;
+        }
     }
+
 }
