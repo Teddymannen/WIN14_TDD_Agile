@@ -68,8 +68,18 @@ namespace CarRentTest
         public void TestSetDate_Ayaz()
         {
             //TestSetDate(testa datum för tidigt t.ex, assert is equal)
-            rent.StartDate = DateTime.Parse("2016, 02, 11");           
+            //TestSetData(t.ex: IsNotNull, Olika format, store an idag datum)
+            rent.StartDate = DateTime.Parse("2016, 02, 11"); 
+
+            var format1 = DateTime.Parse("11/02/2016");
+            var format2 = DateTime.Parse("11.02.2016");
+            var format3 = DateTime.Parse("11-02-2016");
+
             Assert.AreEqual(DateTime.Today, rent.StartDate);
+            Assert.AreNotEqual(format1, rent.StartDate);
+            Assert.AreNotEqual(format2, rent.StartDate);
+            Assert.AreNotEqual(format3, rent.StartDate);
+       
         }
         [TestMethod]
         public void TestTotalRentCostSportCar_Marita()
@@ -83,6 +93,17 @@ namespace CarRentTest
         {
             var total = rent.CalcTotal(20, 3, "FamilyCar");
             Assert.AreEqual(340, total);
+        }
+
+        [TestMethod]
+        public void TestPenaltyForLateReturn_Fredrik()
+        {
+            rent.StartDate = DateTime.Parse("2016, 06, 01");
+            rent.Days = 4;
+            var costWithoutPenalty = rent.CalcTotal(50, 4, "FamilyCar");
+            var costWithPenalty = rent.ReturnCar(50, "FamilyCar", DateTime.Parse("2016, 06, 30"));
+
+            Assert.AreEqual(costWithoutPenalty * 2, costWithPenalty);
         }
     }
 }

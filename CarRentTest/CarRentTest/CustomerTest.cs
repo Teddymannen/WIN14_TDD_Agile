@@ -18,10 +18,10 @@ namespace CarRentTest
         public void TestCustomerIsBlacklisted_Viktor()
         {
             var b1 = cust1.IsBlacklisted();
-            Assert.AreEqual(true, b1);
+            Assert.IsTrue(b1);
 
             var b2 = cust2.IsBlacklisted();
-            Assert.AreEqual(false, b2);
+            Assert.IsFalse(b2);
         }
         
     }
