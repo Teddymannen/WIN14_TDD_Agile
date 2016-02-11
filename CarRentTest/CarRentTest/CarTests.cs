@@ -19,8 +19,11 @@ namespace CarRentTest
         [TestMethod]
         public void SportCarTest_Theo()
         {
-            sportcar.ExtraInsurance = 150;
-            Assert.IsTrue(sportcar.ExtraInsurance > 0);
+            Assert.AreEqual(150, sportcar.ExtraInsurance);
+            sportcar.ExtraInsurance = 350;
+            Assert.IsTrue(sportcar.ExtraInsurance > 150);
+
+            
         }
         [TestMethod]
         public void TestCarMilesIsAboveZero_Teddy()
