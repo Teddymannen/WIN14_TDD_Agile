@@ -102,6 +102,7 @@ namespace CarRentTest
             rent.Days = 4;
             var costWithoutPenalty = rent.CalcTotal(50, 4, "FamilyCar");
 
+            // Datum som gått över tiden
             rent.CalculatePenalty(DateTime.Parse("2016, 06, 30"));
 
             var costWithPenalty = rent.CalcTotal(50, 4, "FamilyCar");
