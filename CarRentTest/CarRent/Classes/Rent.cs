@@ -29,6 +29,7 @@ public class Rent
                startDate = value; 
         }
     }
+    public DateTime StartDate { get; set; }
 
     public int Days { get; set; }
 
@@ -53,7 +54,17 @@ public class Rent
             total = car.DailyCost * d + car.MilageCost * m;
         }
         return total;
-
+    }
+    public DateTime setDate(DateTime d)
+    {
+        if (d >= DateTime.Today)
+        {
+            return d;
+        }
+        else
+        {
+            throw new Exception("error");
+        }
     }
 
     public Car ChooseCar(string carType)
