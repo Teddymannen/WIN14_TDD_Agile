@@ -105,7 +105,7 @@ namespace CarRentTest
             rent.CalculatePenalty(DateTime.Parse("2016, 06, 30"));
 
             var costWithPenalty = rent.CalcTotal(50, 4, "FamilyCar");
-            Assert.AreEqual(costWithoutPenalty * 2, costWithPenalty);
+            Assert.IsTrue(costWithPenalty > costWithoutPenalty);
         }
     }
 }
