@@ -11,6 +11,15 @@ using System.Text;
 
 public class Rent
 {
+    FamilyCar familyCar;
+    SportCar sportCar;
+
+    public Rent()
+    {
+        familyCar = new FamilyCar();
+        sportCar = new SportCar();
+    }
+
     public DateTime StartDate { get; set; }
 
     public int Days { get; set; }
@@ -46,6 +55,27 @@ public class Rent
         else
         {
             throw new Exception("error");
+        }
+    }
+
+    public Car ChooseCar(string carType)
+    {
+        if(carType == null)
+        {
+            throw new ArgumentNullException();
+        }
+
+        if(carType == "familycar")
+        {
+            return familyCar;
+        }
+        else if(carType == "sportcar")
+        {
+            return sportCar;
+        }
+        else
+        {
+            throw new Exception(String.Format("{0} är ingen giltig biltyp", carType));
         }
     }
 }
