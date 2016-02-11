@@ -23,6 +23,10 @@ public class Rent
 
     public DateTime StartDate { get; set; }
 
+    public DateTime EndDate { get; set; }
+
+    public Double TotalDaysRent { get; set; }
+
     public int Days { get; set; }
 
     public Car SelectedCar { get; set; }
@@ -30,6 +34,7 @@ public class Rent
     public double TotalCost { get; set; }
 
     public bool PaymentAccepted { get; set; }
+    
 
     public double CalcTotal(double milage, double days, string c)
     {
@@ -68,7 +73,12 @@ public class Rent
         {
             throw new Exception("Time Error");
         }
-
+    }
+    public double calcDaysRent(DateTime startDate, DateTime endDate)
+    {
+        var initialSetDate = (endDate - startDate).TotalDays;
+        Days = (int)initialSetDate;
+        return Days;
     }
 
     public Car ChooseCar(string carType)

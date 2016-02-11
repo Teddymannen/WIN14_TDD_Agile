@@ -20,6 +20,16 @@ namespace CarRentTest
         } 
 
         [TestMethod]
+        public void TestCalcNumDays_Teddy()
+        {
+            rent.StartDate = DateTime.Parse("2016-02-11");
+            rent.EndDate = DateTime.Parse("2016-02-20");
+
+            rent.TotalDaysRent = (rent.EndDate - rent.StartDate).TotalDays;
+            Assert.AreEqual(rent.TotalDaysRent, 9);
+        }
+
+        [TestMethod]
         public void TestChooseCar_Fredrik()
         {
             // Välj familjebil och kolla att den är ledig
