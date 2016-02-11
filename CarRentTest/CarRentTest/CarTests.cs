@@ -28,13 +28,20 @@ namespace CarRentTest
         [TestMethod]
         public void TestCarMilesIsAboveZero_Teddy()
         {
+            // Sport car tests
             sportcar.MilesDriven = 50;
-            Assert.IsTrue(sportcar.MilesDriven > 0);
+            Assert.IsTrue(sportcar.MilesDriven > 0); 
             sportcar.MilesDriven = -50;
             Assert.IsFalse(sportcar.MilesDriven > 0);
 
+            // Family car tests
+            familycar.MilesDriven = 500 + familycar.TotalMilesDriven;
+            Assert.IsTrue(familycar.MilesDriven > familycar.TotalMilesDriven);
+
             familycar.MilesDriven = 20;
             Assert.IsTrue(familycar.MilesDriven > 0);
+            familycar.MilesDriven = 0;
+            Assert.IsFalse(familycar.MilesDriven > 0);
         }
     }
 }

@@ -32,6 +32,29 @@ namespace CarRentTest
         }
 
         [TestMethod]
+        [ExpectedException(typeof(System.ArgumentNullException))]
+        public void TestChooseCarWithNullArgument_Fredrik()
+        {
+            // Testa null exception
+            var car = rent.ChooseCar(null);
+        }
+
+        [TestMethod]
+        public void TestChooseCarWithUnknownCarType_Fredrik()
+        {
+            try
+            {
+                // Testa välja bil med okänd biltyp
+                var car = rent.ChooseCar("Trabant");
+            }
+            catch(ArgumentException e)
+            {
+                // Fånga upp och kolla att felmeddelandet är korrekt
+                Assert.AreEqual("Trabant är ingen giltig biltyp", e.Message);
+            }
+        }
+
+        [TestMethod]
         public void TestPaymentAccepted_Simon()
         {
             rent.PaymentAccepted = true;
@@ -51,14 +74,15 @@ namespace CarRentTest
         [TestMethod]
         public void TestTotalRentCostSportCar_Marita()
         {
-            var total = rent.CalcTotal(2, 10, "SportCar");
-            Assert.AreEqual(10, total);
+
+            var total = rent.CalcTotal(10, 2, "SportCar");
+            Assert.AreEqual(370, total);
         }
         [TestMethod]
         public void TestTotalRentCostFamilyCar_Marita()
         {
-            var total = rent.CalcTotal(3, 20, "FamilyCar");
-            Assert.AreEqual(60, total);
+            var total = rent.CalcTotal(20, 3, "FamilyCar");
+            Assert.AreEqual(340, total);
         }
     }
 }

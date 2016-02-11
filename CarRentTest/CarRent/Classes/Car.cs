@@ -20,5 +20,12 @@ public abstract class Car
     abstract public double ExtraInsurance { get; set; }
     public double MilesDriven { get; set; }
 
+    public Car()
+    {
+        DailyCost = 100;
+        MilageCost = 2;
+        ExtraInsurance = 0;
+    }
+
 }
 
