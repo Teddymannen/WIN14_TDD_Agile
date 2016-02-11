@@ -11,17 +11,33 @@ using System.Text;
 
 public class SportCar : Car
 {
-    double Insurance;
+    double insurance;
     public override double ExtraInsurance
     {
         get
         {
-            if (Insurance > 150)
-                return Insurance;
+            if (insurance > 150)
+                return insurance;
             else
                 return 150;
         }
-        set { Insurance = value; }
+        set
+        {
+            insurance = value;
+        }
+    }
+
+    double miles = 1000;
+    public double TotalMilesDriven
+    {
+        get
+        {
+            return this.miles;
+        }
+        set
+        {
+            this.miles = value;
+        }
     }
 }
 
