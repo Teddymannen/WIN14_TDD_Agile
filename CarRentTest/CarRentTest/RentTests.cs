@@ -137,8 +137,8 @@ namespace CarRentTest
             var costWithPenalty = rent.CalcTotal(50, 4, "FamilyCar");
 
             Assert.AreEqual(500, costWithoutPenalty);
-            // Penalty ska vara 50 x 25 extra (25 dagar á 50)
-            Assert.AreEqual(500 + 25 * 50, costWithPenalty);
+            // Penalty ska vara 200 x 25 extra (25 dagar á 200)
+            Assert.AreEqual(500 + 25 * 200, costWithPenalty);
 
         }
 
