@@ -110,8 +110,16 @@ namespace CarRentTest
             var total = rent.CalcTotal(0, 3, "FamilyCar");
 
         }
+
         [TestMethod]
         public void TestTotalRentCostSportsCarZeroValue_Marita()
+        {
+            var total = rent.CalcTotal(0, 3, "FamilyCar");
+
+        }
+
+        [TestMethod]
+        public void TestPenaltyForLateReturn_Fredrik()
         {
             // Hyrtiden
             rent.StartDate = DateTime.Parse("2016, 06, 01");
@@ -121,8 +129,12 @@ namespace CarRentTest
 
             // Återlämningsdatum som gått över tiden
             rent.CalculatePenalty(DateTime.Parse("2016, 06, 30"));
-            var total = rent.CalcTotal(0, 3, "FamilyCar");
+
+            var costWithPenalty = rent.CalcTotal(50, 4, "FamilyCar");
+
+            Assert.IsTrue(costWithPenalty > costWithoutPenalty);
 
         }
+
     }
 }
