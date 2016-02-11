@@ -11,5 +11,10 @@ using System.Text;
 
 public class FamilyCar : Car
 {
+    public override double ExtraInsurance
+    {
+        get { return 0; }
+        set { }
+    }
 }
 

@@ -11,5 +11,17 @@ using System.Text;
 
 public class SportCar : Car
 {
+    double Value;
+    public override double ExtraInsurance
+    {
+        get
+        {
+            if (Value > 150)
+                return Value;
+            else
+                return 150;
+        }
+        set { Value = value; }
+    }
 }
 
