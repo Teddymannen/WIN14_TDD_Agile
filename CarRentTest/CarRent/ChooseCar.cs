@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace CarRent
 {
-    public partial class Form1 : Form
+    public partial class ChooseCar : Form
     {
-        public Form1()
+        public ChooseCar()
         {
             InitializeComponent();
+        }
+
+        private void ChooseCar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
