@@ -20,6 +20,16 @@ namespace CarRentTest
         } 
 
         [TestMethod]
+        public void TestCalcNumDays_Teddy()
+        {
+            rent.StartDate = DateTime.Parse("2016-02-11");
+            rent.EndDate = DateTime.Parse("2016-02-20");
+
+            rent.TotalDaysRent = (rent.EndDate - rent.StartDate).TotalDays;
+            Assert.AreEqual(rent.TotalDaysRent, 9);
+        }
+
+        [TestMethod]
         public void TestChooseCar_Fredrik()
         {
             // Välj familjebil och kolla att den är ledig
@@ -35,7 +45,7 @@ namespace CarRentTest
         [ExpectedException(typeof(System.ArgumentNullException))]
         public void TestChooseCarWithNullArgument_Fredrik()
         {
-            // Testa välja bil med null parameter
+            // Testa null exception
             var car = rent.ChooseCar(null);
         }
 
@@ -47,7 +57,7 @@ namespace CarRentTest
                 // Testa välja bil med okänd biltyp
                 var car = rent.ChooseCar("Trabant");
             }
-            catch(Exception e)
+            catch(ArgumentException e)
             {
                 // Fånga upp och kolla att felmeddelandet är korrekt
                 Assert.AreEqual("Trabant är ingen giltig biltyp", e.Message);
@@ -68,8 +78,18 @@ namespace CarRentTest
         public void TestSetDate_Ayaz()
         {
             //TestSetDate(testa datum för tidigt t.ex, assert is equal)
-            rent.StartDate = DateTime.Parse("2016, 02, 11");           
+            //TestSetData(t.ex: IsNotNull, Olika format, store an idag datum)
+            rent.StartDate = DateTime.Parse("2016, 02, 11"); 
+
+            var format1 = DateTime.Parse("11/02/2016");
+            var format2 = DateTime.Parse("11.02.2016");
+            var format3 = DateTime.Parse("11-02-2016");
+
             Assert.AreEqual(DateTime.Today, rent.StartDate);
+            Assert.AreNotEqual(format1, rent.StartDate);
+            Assert.AreNotEqual(format2, rent.StartDate);
+            Assert.AreNotEqual(format3, rent.StartDate);
+       
         }
         [TestMethod]
         public void TestTotalRentCostSportCar_Marita()
@@ -84,18 +104,19 @@ namespace CarRentTest
             var total = rent.CalcTotal(20, 3, "FamilyCar");
             Assert.AreEqual(340, total);
         }
-        [TestMethod]
-        public void TestTotalRentCostFamilyCarZeroValue_Marita()
-        {
-            var total = rent.CalcTotal(0, 3, "FamilyCar");
-            
-        }
-        [TestMethod]
-        public void TestTotalRentCostSportsCarZeroValue_Marita()
-        {
-            var total = rent.CalcTotal(0, 3, "FamilyCar");
 
+        [TestMethod]
+        public void TestPenaltyForLateReturn_Fredrik()
+        {
+            rent.StartDate = DateTime.Parse("2016, 06, 01");
+            rent.Days = 4;
+            var costWithoutPenalty = rent.CalcTotal(50, 4, "FamilyCar");
+
+            // Datum som gått över tiden
+            rent.CalculatePenalty(DateTime.Parse("2016, 06, 30"));
+
+            var costWithPenalty = rent.CalcTotal(50, 4, "FamilyCar");
+            Assert.IsTrue(costWithPenalty > costWithoutPenalty);
         }
-       
     }
 }
