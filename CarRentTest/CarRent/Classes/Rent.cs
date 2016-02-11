@@ -31,23 +31,30 @@ public class Rent
 
     public bool PaymentAccepted { get; set; }
 
+
     public double CalcTotal(double milage, double days, string c)
     {
         var total = 0.0;
         try 
         {
-            if (c == "SportCar" && milage > 0 && days > 0)
-            {
-                var car = new SportCar();
-                total = car.DailyCost * days + car.MilageCost * milage + 150;
+            if (milage > 0 && days > 0)
+                if (c == "SportCar")
+                {
+                    var car = new SportCar();
 
-            }
-            else if (c == "FamilyCar" && milage > 0 && days > 0)
-            {
-                var car = new FamilyCar();
-                total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance;
-            }
-            
+                    total = car.DailyCost * days + car.MilageCost * milage + 150;
+
+                }
+                else if (c == "FamilyCar")
+                {
+                    var car = new FamilyCar();
+                    total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance;
+                }
+                else
+                    MessageBox.Show("Du har ej angivit godkänd typ av bil");
+            else
+                MessageBox.Show("0 i värde är ej tillåtet");
+
         }
         catch (FormatException)
         {
