@@ -11,16 +11,16 @@ using System.Text;
 
 public class FamilyCar : Car
 {
-    double value = 1000;
+    double miles = 1000;
     public double TotalMilesDriven
     {
         get
         {
-            return this.value;
+            return this.miles;
         }
         set
         {
-            this.value = value;
+            this.miles = value;
         }
     }
     public override double ExtraInsurance
