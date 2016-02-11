@@ -68,19 +68,23 @@ namespace CarRentTest
         public void TestSetDate_Ayaz()
         {
             //TestSetDate(testa datum för tidigt t.ex, assert is equal)
-            //TestSetData(t.ex: IsNotNull, Olika format, store an idag datum)
-            rent.StartDate = DateTime.Parse("2016, 02, 11"); 
-
-            var format1 = DateTime.Parse("11/02/2016");
-            var format2 = DateTime.Parse("11.02.2016");
-            var format3 = DateTime.Parse("11-02-2016");
-
+            rent.StartDate = DateTime.Parse("2016, 02, 11");
             Assert.AreEqual(DateTime.Today, rent.StartDate);
-            Assert.AreNotEqual(format1, rent.StartDate);
-            Assert.AreNotEqual(format2, rent.StartDate);
-            Assert.AreNotEqual(format3, rent.StartDate);
-       
+
+            var format1 = DateTime.Parse("2016 02 11");
+            var format2 = DateTime.Parse("2016/02/11");
+
+            Assert.AreEqual(format1, rent.StartDate);
+            Assert.AreEqual(format2, rent.StartDate);
+            
+            //var format3 = DateTime.Parse("11/02/2016");
+            //var format4 = DateTime.Parse("11.02.2016");
+
+            //Assert.AreEqual(format3, rent.StartDate);
+            //Assert.AreEqual(format4, rent.StartDate);
+            
         }
+
         [TestMethod]
         public void TestTotalRentCostSportCar_Marita()
         {
