@@ -11,6 +11,15 @@ using System.Text;
 
 public class Rent
 {
+    FamilyCar familyCar;
+    SportCar sportCar;
+
+    public Rent()
+    {
+        familyCar = new FamilyCar();
+        sportCar = new SportCar();
+    }
+
     private DateTime startDate;
     public DateTime StartDate {
         get
@@ -45,5 +54,18 @@ public class Rent
         }
         return total;
 
+    }
+
+    public Car ChooseCar(string carType)
+    {
+        if(carType == "familycar")
+        {
+            return familyCar;
+        }
+        else if(carType == "sportcar")
+        {
+            return sportCar;
+        }
+        return null;
     }
 }
