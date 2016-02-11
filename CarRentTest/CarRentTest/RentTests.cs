@@ -84,5 +84,16 @@ namespace CarRentTest
             var total = rent.CalcTotal(20, 3, "FamilyCar");
             Assert.AreEqual(340, total);
         }
+
+        [TestMethod]
+        public void TestPenaltyForLateReturn_Fredrik()
+        {
+            rent.StartDate = DateTime.Parse("2016, 06, 01");
+            rent.Days = 4;
+            var costWithoutPenalty = rent.CalcTotal(50, 4, "FamilyCar");
+            var costWithPenalty = rent.ReturnCar(50, "FamilyCar", DateTime.Parse("2016, 06, 30"));
+
+            Assert.AreEqual(costWithoutPenalty * 2, costWithPenalty);
+        }
     }
 }
