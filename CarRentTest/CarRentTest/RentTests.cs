@@ -22,12 +22,36 @@ namespace CarRentTest
         [TestMethod]
         public void TestChooseCar_Fredrik()
         {
-            // assert is true för om bilen är tillgänglig + om man har valt biltyp
-            SportCar sportCar = new SportCar();
-            Assert.AreEqual(sportCar.IsRented, false);
+            // Välj familjebil och kolla att den är ledig
+            var familyCar = rent.ChooseCar("familycar");
+            Assert.IsFalse(familyCar.IsRented);
 
-            FamilyCar familyCar = new FamilyCar();
-            Assert.AreEqual(familyCar.IsRented, false);
+            // Välj sportbil och kolla att den är ledig
+            var sportCar = rent.ChooseCar("sportcar");
+            Assert.IsFalse(sportCar.IsRented);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(System.ArgumentNullException))]
+        public void TestChooseCarWithNullArgument_Fredrik()
+        {
+            // Testa välja bil med null parameter
+            var car = rent.ChooseCar(null);
+        }
+
+        [TestMethod]
+        public void TestChooseCarWithUnknownCarType_Fredrik()
+        {
+            try
+            {
+                // Testa välja bil med okänd biltyp
+                var car = rent.ChooseCar("Trabant");
+            }
+            catch(Exception e)
+            {
+                // Fånga upp och kolla att felmeddelandet är korrekt
+                Assert.AreEqual("Trabant är ingen giltig biltyp", e.Message);
+            }
         }
 
         [TestMethod]
@@ -35,6 +59,9 @@ namespace CarRentTest
         {
             rent.PaymentAccepted = true;
             Assert.IsTrue(rent.PaymentAccepted);
+
+            rent.PaymentAccepted = false;
+            Assert.IsFalse(rent.PaymentAccepted);
         }
         
         [TestMethod]
