@@ -108,11 +108,13 @@ namespace CarRentTest
         [TestMethod]
         public void TestPenaltyForLateReturn_Fredrik()
         {
+            // Hyrtiden
             rent.StartDate = DateTime.Parse("2016, 06, 01");
-            rent.Days = 4;
+            rent.EndDate = DateTime.Parse("2016, 06, 05");
+
             var costWithoutPenalty = rent.CalcTotal(50, 4, "FamilyCar");
 
-            // Datum som gått över tiden
+            // Återlämningsdatum som gått över tiden
             rent.CalculatePenalty(DateTime.Parse("2016, 06, 30"));
 
             var costWithPenalty = rent.CalcTotal(50, 4, "FamilyCar");
