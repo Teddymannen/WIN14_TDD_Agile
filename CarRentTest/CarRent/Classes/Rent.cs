@@ -105,6 +105,7 @@ public class Rent
 
     public void CalculatePenalty(DateTime returnDate)
     {
+        calcDaysRent(StartDate, EndDate);
         DateTime endDate = StartDate.AddDays(Days);
         TimeSpan dt = returnDate - endDate;
         var numberOfDaysOverdue = dt.TotalDays;
