@@ -35,7 +35,7 @@ namespace CarRentTest
         [ExpectedException(typeof(System.ArgumentNullException))]
         public void TestChooseCarWithNullArgument_Fredrik()
         {
-            // Testa välja bil med null parameter
+            // Testa null exception
             var car = rent.ChooseCar(null);
         }
 
@@ -47,7 +47,7 @@ namespace CarRentTest
                 // Testa välja bil med okänd biltyp
                 var car = rent.ChooseCar("Trabant");
             }
-            catch(Exception e)
+            catch(ArgumentException e)
             {
                 // Fånga upp och kolla att felmeddelandet är korrekt
                 Assert.AreEqual("Trabant är ingen giltig biltyp", e.Message);

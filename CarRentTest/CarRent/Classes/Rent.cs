@@ -75,7 +75,7 @@ public class Rent
         }
         else
         {
-            throw new Exception(String.Format("{0} är ingen giltig biltyp", carType));
+            throw new ArgumentException(String.Format("{0} är ingen giltig biltyp", carType));
         }
     }
 }
