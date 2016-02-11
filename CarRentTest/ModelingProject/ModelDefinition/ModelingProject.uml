@@ -995,8 +995,8 @@
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="4ec8c964-fd65-455a-9888-92b5aab8b157"
-                      LastKnownName="bool"
+                      Id="d4337747-3318-4a71-9390-6dd922eaf8b1"
+                      LastKnownName="double"
                       LastKnownLocation="ModelingProject.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -1140,6 +1140,84 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="31bc9bcb-25ff-4baa-aa0a-201f999bc7f2"
+            name="insurance"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="d4337747-3318-4a71-9390-6dd922eaf8b1"
+                LastKnownName="double"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="9473353c-c497-4187-a8b7-43b14b745901"
+            name="getInsurance"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="52b52c29-6c03-4f8f-b26c-40256327b083"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d4337747-3318-4a71-9390-6dd922eaf8b1"
+                      LastKnownName="double"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7275d509-7311-4d0c-b2f4-e91340272974"
+            name="setInsurance"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c6ca3683-e510-44ff-b2e9-05f1c06e62e7"
+                  name="double"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="18824247-3bee-4aa3-bff1-9d64f56ff350"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="97ddbe92-6a6c-41a9-a7e7-c018cd1730cc"
+                      LastKnownName="void"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1192,6 +1270,84 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="a3c9cdf8-c8b4-4590-bbe1-8d6559dca80f"
+            name="miles"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="d4337747-3318-4a71-9390-6dd922eaf8b1"
+                LastKnownName="double"
+                LastKnownLocation="ModelingProject.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="36002b79-d8b0-4b2a-8ecf-031cf0138037"
+            name="getMiles"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="33a1a881-78b1-4a08-ba7f-c6556e0a1b0e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d4337747-3318-4a71-9390-6dd922eaf8b1"
+                      LastKnownName="double"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="59dc2b10-17f4-448d-b67a-fc227ad6d8a6"
+            name="setMiles"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e07bc0d2-6ffb-4c69-a09c-0059c138510c"
+                  name="double"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f9b1ab93-54d0-40bb-9610-0bc83daee075"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="97ddbe92-6a6c-41a9-a7e7-c018cd1730cc"
+                      LastKnownName="void"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
