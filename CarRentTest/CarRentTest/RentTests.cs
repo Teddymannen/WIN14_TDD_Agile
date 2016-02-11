@@ -36,6 +36,9 @@ namespace CarRentTest
         {
             rent.PaymentAccepted = true;
             Assert.IsTrue(rent.PaymentAccepted);
+
+            rent.PaymentAccepted = false;
+            Assert.IsFalse(rent.PaymentAccepted);
         }
         
         [TestMethod]
