@@ -122,7 +122,7 @@ public class Rent
         var numberOfDaysOverdue = dt.TotalDays;
         if(numberOfDaysOverdue > 0)
         {
-            penaltyCost = numberOfDaysOverdue * 50;
+            penaltyCost = numberOfDaysOverdue * 200;
         }
         else if (numberOfDaysOverdue < 0)
         {
