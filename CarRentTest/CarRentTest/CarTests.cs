@@ -22,6 +22,7 @@ namespace CarRentTest
             Assert.AreEqual(150, sportcar.ExtraInsurance);
             sportcar.ExtraInsurance = 350;
             Assert.IsTrue(sportcar.ExtraInsurance > 150);
+
             
         }
         [TestMethod]
@@ -29,6 +30,9 @@ namespace CarRentTest
         {
             sportcar.MilesDriven = 50;
             Assert.IsTrue(sportcar.MilesDriven > 0);
+            sportcar.MilesDriven = -50;
+            Assert.IsFalse(sportcar.MilesDriven > 0);
+
             familycar.MilesDriven = 20;
             Assert.IsTrue(familycar.MilesDriven > 0);
         }
