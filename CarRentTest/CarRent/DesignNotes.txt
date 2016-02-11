@@ -1,0 +1,13 @@
+﻿Loginruta:
+Logga in
+
+Bilvalsruta:
+Välja datum m.h.a kalender
+Välja biltyp, Sport eller Family (Om sport visa insurancepris)
+Två knappar, Boka eller Avbryt
+
+Confirmation-ruta:
+Visa valt datum
+Visa vald biltyp
+Visa mileage pris och eventuell insurances
+Knapp för att slutföra bokning
