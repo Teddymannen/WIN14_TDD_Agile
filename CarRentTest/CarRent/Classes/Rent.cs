@@ -56,7 +56,9 @@ public class Rent
                     total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance + penaltyCost;
                 }
                 else
+                {
                     MessageBox.Show("Du har ej angivit godkänd typ av bil");
+                }
             else
                 MessageBox.Show("0 i värde är ej tillåtet");
 
