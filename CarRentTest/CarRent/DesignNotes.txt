@@ -2,7 +2,7 @@
 Logga in
 
 Bilvalsruta:
-Välja datum m.h.a kalender
+Välja start- och slutdatum m.h.a kalender
 Välja biltyp, Sport eller Family (Om sport visa insurancepris)
 Två knappar, Boka eller Avbryt
 
