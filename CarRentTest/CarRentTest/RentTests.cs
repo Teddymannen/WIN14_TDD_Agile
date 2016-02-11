@@ -57,7 +57,7 @@ namespace CarRentTest
                 // Testa välja bil med okänd biltyp
                 var car = rent.ChooseCar("Trabant");
             }
-            catch(ArgumentException e)
+            catch (ArgumentException e)
             {
                 // Fånga upp och kolla att felmeddelandet är korrekt
                 Assert.AreEqual("Trabant är ingen giltig biltyp", e.Message);
@@ -78,19 +78,23 @@ namespace CarRentTest
         public void TestSetDate_Ayaz()
         {
             //TestSetDate(testa datum för tidigt t.ex, assert is equal)
-            //TestSetData(t.ex: IsNotNull, Olika format, store an idag datum)
-            rent.StartDate = DateTime.Parse("2016, 02, 11"); 
-
-            var format1 = DateTime.Parse("11/02/2016");
-            var format2 = DateTime.Parse("11.02.2016");
-            var format3 = DateTime.Parse("11-02-2016");
-
+            rent.StartDate = DateTime.Parse("2016, 02, 11");
             Assert.AreEqual(DateTime.Today, rent.StartDate);
-            Assert.AreNotEqual(format1, rent.StartDate);
-            Assert.AreNotEqual(format2, rent.StartDate);
-            Assert.AreNotEqual(format3, rent.StartDate);
-       
+
+            var format1 = DateTime.Parse("2016 02 11");
+            var format2 = DateTime.Parse("2016/02/11");
+
+            Assert.AreEqual(format1, rent.StartDate);
+            Assert.AreEqual(format2, rent.StartDate);
+            
+            //var format3 = DateTime.Parse("11/02/2016");
+            //var format4 = DateTime.Parse("11.02.2016");
+
+            //Assert.AreEqual(format3, rent.StartDate);
+            //Assert.AreEqual(format4, rent.StartDate);
+            
         }
+
         [TestMethod]
         public void TestTotalRentCostSportCar_Marita()
         {
@@ -104,19 +108,59 @@ namespace CarRentTest
             var total = rent.CalcTotal(20, 3, "FamilyCar");
             Assert.AreEqual(340, total);
         }
+        [TestMethod]
+        public void TestTotalRentCostFamilyCarZeroValue_Marita()
+        {
+            var total = rent.CalcTotal(0, 3, "FamilyCar");
+
+        }
+
+        [TestMethod]
+        public void TestTotalRentCostSportsCarZeroValue_Marita()
+        {
+            var total = rent.CalcTotal(0, 3, "FamilyCar");
+
+        }
 
         [TestMethod]
         public void TestPenaltyForLateReturn_Fredrik()
         {
+            // Hyrtiden
             rent.StartDate = DateTime.Parse("2016, 06, 01");
-            rent.Days = 4;
+            rent.EndDate = DateTime.Parse("2016, 06, 05");
+
             var costWithoutPenalty = rent.CalcTotal(50, 4, "FamilyCar");
 
-            // Datum som gått över tiden
-            rent.CalculatePenalty(DateTime.Parse("2016, 06, 30"));
+            // Återlämningsdatum som gått över tiden med 25 dagar
+            rent.CalculatePenaltyOrDiscount(DateTime.Parse("2016, 06, 30"));
 
             var costWithPenalty = rent.CalcTotal(50, 4, "FamilyCar");
-            Assert.IsTrue(costWithPenalty > costWithoutPenalty);
+
+            Assert.AreEqual(500, costWithoutPenalty);
+            // Penalty ska vara 50 x 25 extra (25 dagar á 50)
+            Assert.AreEqual(500 + 25 * 50, costWithPenalty);
+
         }
+
+        [TestMethod]
+        public void TestEarlyReturn_Fredrik()
+        {
+            // Förvald hyrtid
+            rent.StartDate = DateTime.Parse("2016, 06, 01");
+            rent.EndDate = DateTime.Parse("2016, 06, 05");
+
+            var costWithoutDiscount = rent.CalcTotal(50, 4, "FamilyCar");
+
+            // Återlämningsdatum 1 dag tidigare
+            rent.CalculatePenaltyOrDiscount(DateTime.Parse("2016, 06, 04"));
+
+            var costWithDiscount = rent.CalcTotal(50, 4, "FamilyCar");
+
+            Assert.AreEqual(500, costWithoutDiscount);
+            // Rabatten ska vara 1 dag á 100
+            Assert.AreEqual(500 - 1*100, costWithDiscount);
+
+        }
+
     }
 }
