@@ -17,11 +17,11 @@ namespace CarRentTest
         [TestMethod]
         public void TestCustomerIsBlacklisted_Viktor()
         {
-            var blacklisted = cust1.IsBlacklisted();
-            Assert.AreEqual(true, blacklisted);
+            var b1 = cust1.IsBlacklisted();
+            Assert.AreEqual(true, b1);
 
-            var b = cust2.IsBlacklisted();
-            Assert.AreEqual(false, b);
+            var b2 = cust2.IsBlacklisted();
+            Assert.AreEqual(false, b2);
         }
         
     }
