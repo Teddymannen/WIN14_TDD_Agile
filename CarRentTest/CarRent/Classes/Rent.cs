@@ -48,13 +48,13 @@ public class Rent
                 {
                     var car = new SportCar();
 
-                    total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance + penaltyCost;
+                    total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance + penaltyCost + discount;
 
                 }
                 else if (c == "FamilyCar")
                 {
                     var car = new FamilyCar();
-                    total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance + penaltyCost;
+                    total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance + penaltyCost + discount;
                 }
                 else
                 {
