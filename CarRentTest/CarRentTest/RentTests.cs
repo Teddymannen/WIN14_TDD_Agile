@@ -11,6 +11,14 @@ namespace CarRentTest
     [TestClass]
     public class RentTests
     {
+        Rent rent;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            rent = new Rent();
+        } 
+
         [TestMethod]
         public void TestChooseCar_Fredrik()
         {
@@ -25,40 +33,28 @@ namespace CarRentTest
         [TestMethod]
         public void TestPaymentAccepted_Simon()
         {
-            var rent = new Rent();
-
             rent.PaymentAccepted = true;
             Assert.IsTrue(rent.PaymentAccepted);
         }
-
+        
         [TestMethod]
         public void TestSetDate_Ayaz()
         {
             //TestSetDate(testa datum för tidigt t.ex, assert is equal)
-            var rent = new Rent();
-
-            rent.StartDate = new DateTime(2016, 02, 10);           
-            Assert.AreEqual(new DateTime(2016, 02, 10), rent.StartDate);
-                
-
+            rent.StartDate = DateTime.Parse("2016, 02, 11");           
+            Assert.AreEqual(DateTime.Today, rent.StartDate);
         }
         [TestMethod]
         public void TestTotalRentCostSportCar_Marita()
         {
-            var rent = new Rent();
-
             var total = rent.CalcTotal(2, 10, "SportCar");
             Assert.AreEqual(10, total);
-
         }
         [TestMethod]
         public void TestTotalRentCostFamilyCar_Marita()
         {
-            var rent = new Rent();
-
             var total = rent.CalcTotal(3, 20, "FamilyCar");
             Assert.AreEqual(60, total);
-
         }
     }
 }
