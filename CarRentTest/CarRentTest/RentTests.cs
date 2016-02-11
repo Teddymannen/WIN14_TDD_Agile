@@ -20,6 +20,16 @@ namespace CarRentTest
         } 
 
         [TestMethod]
+        public void TestCalcNumDays_Teddy()
+        {
+            rent.StartDate = DateTime.Parse("2016-02-11");
+            rent.EndDate = DateTime.Parse("2016-02-20");
+
+            rent.TotalDaysRent = (rent.EndDate - rent.StartDate).TotalDays;
+            Assert.AreEqual(rent.TotalDaysRent, 9);
+        }
+
+        [TestMethod]
         public void TestChooseCar_Fredrik()
         {
             // Välj familjebil och kolla att den är ledig
@@ -47,7 +57,7 @@ namespace CarRentTest
                 // Testa välja bil med okänd biltyp
                 var car = rent.ChooseCar("Trabant");
             }
-            catch(ArgumentException e)
+            catch (ArgumentException e)
             {
                 // Fånga upp och kolla att felmeddelandet är korrekt
                 Assert.AreEqual("Trabant är ingen giltig biltyp", e.Message);
@@ -98,5 +108,39 @@ namespace CarRentTest
             var total = rent.CalcTotal(20, 3, "FamilyCar");
             Assert.AreEqual(340, total);
         }
+        [TestMethod]
+        public void TestTotalRentCostFamilyCarZeroValue_Marita()
+        {
+            var total = rent.CalcTotal(0, 3, "FamilyCar");
+
+        }
+
+        [TestMethod]
+        public void TestTotalRentCostSportsCarZeroValue_Marita()
+        {
+            var total = rent.CalcTotal(0, 3, "FamilyCar");
+
+        }
+
+        [TestMethod]
+        public void TestPenaltyForLateReturn_Fredrik()
+        {
+            // Hyrtiden
+            rent.StartDate = DateTime.Parse("2016, 06, 01");
+            rent.EndDate = DateTime.Parse("2016, 06, 05");
+
+            var costWithoutPenalty = rent.CalcTotal(50, 4, "FamilyCar");
+
+            // Återlämningsdatum som gått över tiden med 25 dagar
+            rent.CalculatePenalty(DateTime.Parse("2016, 06, 30"));
+
+            var costWithPenalty = rent.CalcTotal(50, 4, "FamilyCar");
+
+            Assert.AreEqual(costWithoutPenalty, 500);
+            // Penalty ska vara 50 x 25 extra (25 dagar á 50)
+            Assert.AreEqual(costWithPenalty, 500 + 25*50);
+
+        }
+
     }
 }

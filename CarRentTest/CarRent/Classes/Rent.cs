@@ -14,6 +14,7 @@ public class Rent
 {
     FamilyCar familyCar;
     SportCar sportCar;
+    double penaltyCost;
 
     public Rent()
     {
@@ -23,6 +24,10 @@ public class Rent
 
     public DateTime StartDate { get; set; }
 
+    public DateTime EndDate { get; set; }
+
+    public Double TotalDaysRent { get; set; }
+
     public int Days { get; set; }
 
     public Car SelectedCar { get; set; }
@@ -31,32 +36,42 @@ public class Rent
 
     public bool PaymentAccepted { get; set; }
 
+
     public double CalcTotal(double milage, double days, string c)
     {
         var total = 0.0;
-        try 
+        try
         {
-            if (c == "SportCar" && milage > 0 && days > 0)
-            {
-            var car = new SportCar();
-                total = car.DailyCost * days + car.MilageCost * milage + 150;
+            if (milage > 0 && days > 0)
+                if (c == "SportCar")
+                {
+                    var car = new SportCar();
 
-        }
-            else if (c == "FamilyCar" && milage > 0 && days > 0)
-        {
-            var car = new FamilyCar();
-                total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance;
-            }
-            
+                    total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance + penaltyCost;
+
+                }
+                else if (c == "FamilyCar")
+                {
+                    var car = new FamilyCar();
+                    total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance + penaltyCost;
+                }
+                else
+                {
+                    MessageBox.Show("Du har ej angivit godkänd typ av bil");
+                }
+            else
+                MessageBox.Show("0 i värde är ej tillåtet");
+
         }
         catch (FormatException)
         {
-            
+
             MessageBox.Show("You have entered non-numeric characters");
-            
+
         }
         return total;
-    }
+    
+}
     public DateTime setDate(DateTime d)
     {
        
@@ -69,7 +84,12 @@ public class Rent
         {
             throw new Exception("Time Error");
         }
-
+    }
+    public double calcDaysRent(DateTime startDate, DateTime endDate)
+    {
+        var initialSetDate = (endDate - startDate).TotalDays;
+        Days = (int)initialSetDate;
+        return Days;
     }
 
     public Car ChooseCar(string carType)
@@ -91,5 +111,14 @@ public class Rent
         {
             throw new ArgumentException(String.Format("{0} är ingen giltig biltyp", carType));
         }
+    }
+
+    public void CalculatePenalty(DateTime returnDate)
+    {
+        calcDaysRent(StartDate, EndDate);
+        DateTime endDate = StartDate.AddDays(Days);
+        TimeSpan dt = returnDate - endDate;
+        var numberOfDaysOverdue = dt.TotalDays;
+        penaltyCost = numberOfDaysOverdue * 50;
     }
 }
