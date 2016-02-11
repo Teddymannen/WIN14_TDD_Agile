@@ -44,13 +44,15 @@
             // 
             // startDate
             // 
-            this.startDate.Location = new System.Drawing.Point(32, 136);
+            this.startDate.Location = new System.Drawing.Point(43, 167);
+            this.startDate.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.startDate.Name = "startDate";
             this.startDate.TabIndex = 0;
             // 
             // returnDate
             // 
-            this.returnDate.Location = new System.Drawing.Point(270, 136);
+            this.returnDate.Location = new System.Drawing.Point(360, 167);
+            this.returnDate.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.returnDate.Name = "returnDate";
             this.returnDate.TabIndex = 1;
             // 
@@ -58,9 +60,10 @@
             // 
             this.startDateLabel.AutoSize = true;
             this.startDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.startDateLabel.Location = new System.Drawing.Point(28, 116);
+            this.startDateLabel.Location = new System.Drawing.Point(37, 143);
+            this.startDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.startDateLabel.Name = "startDateLabel";
-            this.startDateLabel.Size = new System.Drawing.Size(83, 20);
+            this.startDateLabel.Size = new System.Drawing.Size(99, 25);
             this.startDateLabel.TabIndex = 2;
             this.startDateLabel.Text = "Start Date";
             // 
@@ -68,9 +71,10 @@
             // 
             this.returnDateLabel.AutoSize = true;
             this.returnDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.returnDateLabel.Location = new System.Drawing.Point(266, 116);
+            this.returnDateLabel.Location = new System.Drawing.Point(355, 143);
+            this.returnDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.returnDateLabel.Name = "returnDateLabel";
-            this.returnDateLabel.Size = new System.Drawing.Size(97, 20);
+            this.returnDateLabel.Size = new System.Drawing.Size(115, 25);
             this.returnDateLabel.TabIndex = 3;
             this.returnDateLabel.Text = "Return Date";
             // 
@@ -78,9 +82,10 @@
             // 
             this.sportCar.AutoSize = true;
             this.sportCar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.sportCar.Location = new System.Drawing.Point(32, 355);
+            this.sportCar.Location = new System.Drawing.Point(43, 437);
+            this.sportCar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sportCar.Name = "sportCar";
-            this.sportCar.Size = new System.Drawing.Size(88, 24);
+            this.sportCar.Size = new System.Drawing.Size(107, 29);
             this.sportCar.TabIndex = 4;
             this.sportCar.TabStop = true;
             this.sportCar.Text = "Sportcar";
@@ -90,9 +95,10 @@
             // 
             this.familyCar.AutoSize = true;
             this.familyCar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.familyCar.Location = new System.Drawing.Point(143, 355);
+            this.familyCar.Location = new System.Drawing.Point(191, 437);
+            this.familyCar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.familyCar.Name = "familyCar";
-            this.familyCar.Size = new System.Drawing.Size(94, 24);
+            this.familyCar.Size = new System.Drawing.Size(117, 29);
             this.familyCar.TabIndex = 5;
             this.familyCar.TabStop = true;
             this.familyCar.Text = "Familycar";
@@ -102,9 +108,10 @@
             // 
             this.carType.AutoSize = true;
             this.carType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.carType.Location = new System.Drawing.Point(28, 328);
+            this.carType.Location = new System.Drawing.Point(37, 404);
+            this.carType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.carType.Name = "carType";
-            this.carType.Size = new System.Drawing.Size(313, 20);
+            this.carType.Size = new System.Drawing.Size(387, 25);
             this.carType.TabIndex = 6;
             this.carType.Text = "Choose what cartype you would like to rent.";
             // 
@@ -112,9 +119,10 @@
             // 
             this.welcomeLabel.AutoSize = true;
             this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeLabel.Location = new System.Drawing.Point(26, 14);
+            this.welcomeLabel.Location = new System.Drawing.Point(35, 17);
+            this.welcomeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(126, 31);
+            this.welcomeLabel.Size = new System.Drawing.Size(159, 39);
             this.welcomeLabel.TabIndex = 7;
             this.welcomeLabel.Text = "Welcome";
             // 
@@ -122,18 +130,20 @@
             // 
             this.dateTextLabel.AutoSize = true;
             this.dateTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dateTextLabel.Location = new System.Drawing.Point(28, 59);
+            this.dateTextLabel.Location = new System.Drawing.Point(37, 73);
+            this.dateTextLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dateTextLabel.Name = "dateTextLabel";
-            this.dateTextLabel.Size = new System.Drawing.Size(279, 40);
+            this.dateTextLabel.Size = new System.Drawing.Size(343, 50);
             this.dateTextLabel.TabIndex = 8;
             this.dateTextLabel.Text = "How long would you like to rent a car? \r\nPlease choose a start and return date.";
             // 
             // cancleBtn
             // 
             this.cancleBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cancleBtn.Location = new System.Drawing.Point(334, 418);
+            this.cancleBtn.Location = new System.Drawing.Point(445, 514);
+            this.cancleBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancleBtn.Name = "cancleBtn";
-            this.cancleBtn.Size = new System.Drawing.Size(75, 39);
+            this.cancleBtn.Size = new System.Drawing.Size(100, 48);
             this.cancleBtn.TabIndex = 9;
             this.cancleBtn.Text = "Cancle";
             this.cancleBtn.UseVisualStyleBackColor = true;
@@ -141,9 +151,10 @@
             // rentBtn
             // 
             this.rentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.rentBtn.Location = new System.Drawing.Point(415, 418);
+            this.rentBtn.Location = new System.Drawing.Point(553, 514);
+            this.rentBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rentBtn.Name = "rentBtn";
-            this.rentBtn.Size = new System.Drawing.Size(75, 39);
+            this.rentBtn.Size = new System.Drawing.Size(100, 48);
             this.rentBtn.TabIndex = 10;
             this.rentBtn.Text = "Rent";
             this.rentBtn.UseVisualStyleBackColor = true;
@@ -153,17 +164,18 @@
             this.sportCarAlert.AutoSize = true;
             this.sportCarAlert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.sportCarAlert.ForeColor = System.Drawing.Color.Red;
-            this.sportCarAlert.Location = new System.Drawing.Point(29, 388);
+            this.sportCarAlert.Location = new System.Drawing.Point(39, 478);
+            this.sportCarAlert.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sportCarAlert.Name = "sportCarAlert";
-            this.sportCarAlert.Size = new System.Drawing.Size(269, 17);
+            this.sportCarAlert.Size = new System.Drawing.Size(340, 22);
             this.sportCarAlert.TabIndex = 11;
             this.sportCarAlert.Text = "Sportcar includes an extra insurance cost";
             // 
             // ChooseCar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 478);
+            this.ClientSize = new System.Drawing.Size(699, 588);
             this.Controls.Add(this.sportCarAlert);
             this.Controls.Add(this.rentBtn);
             this.Controls.Add(this.cancleBtn);
@@ -176,7 +188,9 @@
             this.Controls.Add(this.startDateLabel);
             this.Controls.Add(this.returnDate);
             this.Controls.Add(this.startDate);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ChooseCar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Choose Car and Date";
             this.Load += new System.EventHandler(this.ChooseCar_Load);
             this.ResumeLayout(false);
