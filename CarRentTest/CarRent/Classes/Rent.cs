@@ -38,13 +38,13 @@ public class Rent
         {
             if (c == "SportCar" && milage > 0 && days > 0)
             {
-                var car = new SportCar();
+            var car = new SportCar();
                 total = car.DailyCost * days + car.MilageCost * milage + 150;
 
-            }
+        }
             else if (c == "FamilyCar" && milage > 0 && days > 0)
-            {
-                var car = new FamilyCar();
+        {
+            var car = new FamilyCar();
                 total = car.DailyCost * days + car.MilageCost * milage + car.ExtraInsurance;
             }
             
@@ -59,14 +59,16 @@ public class Rent
     }
     public DateTime setDate(DateTime d)
     {
+       
         if (d >= DateTime.Today)
         {
             return d;
         }
         else
         {
-            throw new Exception("error");
+            throw new Exception("Time Error");
         }
+
     }
 
     public Car ChooseCar(string carType)
