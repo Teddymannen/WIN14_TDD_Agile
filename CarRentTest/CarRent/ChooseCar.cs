@@ -50,9 +50,11 @@ namespace CarRent
             if(sportCar.Checked)
             {
                 sportCarAlert.Visible = true;
+                rent.ChooseCar("sportcar");
             }
             else
             {
+                rent.ChooseCar("familycar");
                 sportCarAlert.Visible = false;
             }
             

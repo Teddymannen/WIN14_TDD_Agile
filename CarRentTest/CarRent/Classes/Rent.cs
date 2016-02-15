@@ -16,7 +16,7 @@ public class Rent
     SportCar sportCar;
     double penaltyCost;
     double discount;
-
+    
     public Rent()
     {
         familyCar = new FamilyCar();
@@ -93,7 +93,7 @@ public class Rent
         return Days;
     }
 
-    public Car ChooseCar(string carType)
+    public bool ChooseCar(string carType)
     {
         if(carType == null)
         {
@@ -102,11 +102,15 @@ public class Rent
 
         if(carType == "familycar")
         {
-            return familyCar;
+            SelectedCar = new FamilyCar();
+            return true;
+            // return familyCar;
         }
         else if(carType == "sportcar")
         {
-            return sportCar;
+            SelectedCar = new SportCar();
+            return true;
+            //return sportCar;
         }
         else
         {
