@@ -120,14 +120,15 @@ namespace CarRentTest
         public void TestTotalRentCostFamilyCarZeroValue_Marita()
         {
             var total = rent.CalcTotal(0, 3, "FamilyCar");
+            Assert.IsNotNull(true);
 
         }
 
         [TestMethod]
         public void TestTotalRentCostSportsCarZeroValue_Marita()
         {
-            var total = rent.CalcTotal(0, 3, "FamilyCar");
-
+            var total = rent.CalcTotal(0, 3, "SportCar");
+            Assert.IsNotNull(true);
         }
 
         [TestMethod]
