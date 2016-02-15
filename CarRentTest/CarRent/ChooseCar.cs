@@ -20,6 +20,7 @@ namespace CarRent
             rent.StartDate = startDate.SelectionRange.Start;
             startDate.MinDate = DateTime.Today;
             endDate.MinDate = DateTime.Today;
+            rent.EndDate = (startDate.SelectionRange.Start).AddDays(1);
         }
 
         private void ChooseCar_Load(object sender, EventArgs e)
@@ -31,10 +32,17 @@ namespace CarRent
 
         private void rentBtn_Click(object sender, EventArgs e)
         {
-            Confirmation frm = new Confirmation(rent);
-            this.Visible = false;
-            frm.ShowDialog();
-            this.Close();
+            if(rent.ValidatingInputValue())
+            {
+                Confirmation frm = new Confirmation(rent);
+                this.Visible = false;
+                frm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                lblErrorMsg.Visible = true;
+            }
         }
 
         public void startDate_DateChanged(object sender, DateRangeEventArgs e)
@@ -51,6 +59,7 @@ namespace CarRent
 
         private void AlertBoxTrigger(object sender, EventArgs e)
         {
+            lblErrorMsg.Visible = false;
             if(sportCar.Checked)
             {
                 sportCarAlert.Visible = true;
