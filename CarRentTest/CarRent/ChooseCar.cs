@@ -32,7 +32,7 @@ namespace CarRent
             this.Close();
         }
 
-        private void startDate_DateChanged(object sender, DateRangeEventArgs e)
+        public void startDate_DateChanged(object sender, DateRangeEventArgs e)
         {
             startDate_textBox.Text = startDate.SelectionRange.Start.ToShortDateString();
         }
