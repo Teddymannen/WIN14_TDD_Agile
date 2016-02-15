@@ -55,7 +55,10 @@ namespace CarRent
 
         private void calcButton_Click(object sender, EventArgs e)
         {
-            totalCostAmount.Text = rent.CalcTotal(double.Parse(milesDriven_TextBox.Text), rent.Days, carType.Text).ToString();
+            double milesDriven = 0;
+            double.TryParse(milesDriven_TextBox.Text, out milesDriven);
+
+            totalCostAmount.Text = rent.CalcTotal(milesDriven, rent.Days, carType.Text).ToString();
         }
     }
 }
