@@ -86,6 +86,7 @@
             this.InsuranceLabel.Size = new System.Drawing.Size(123, 20);
             this.InsuranceLabel.TabIndex = 3;
             this.InsuranceLabel.Text = "Extra insurance:";
+            this.InsuranceLabel.Visible = false;
             // 
             // StartDateLabel
             // 
@@ -175,6 +176,7 @@
             this.ExtraInsurance.Size = new System.Drawing.Size(43, 16);
             this.ExtraInsurance.TabIndex = 12;
             this.ExtraInsurance.Text = "150 kr";
+            this.ExtraInsurance.Visible = false;
             // 
             // ConfirmBtn
             // 
@@ -194,8 +196,9 @@
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(75, 39);
             this.CancelBtn.TabIndex = 14;
-            this.CancelBtn.Text = "Cancel";
+            this.CancelBtn.Text = "Return";
             this.CancelBtn.UseVisualStyleBackColor = true;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // EndDate
             // 

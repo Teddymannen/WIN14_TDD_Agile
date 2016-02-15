@@ -17,7 +17,7 @@ namespace CarRent
         {
             InitializeComponent();
             rent = new Rent();
-
+            rent.StartDate = startDate.SelectionRange.Start;
         }
 
         private void ChooseCar_Load(object sender, EventArgs e)
@@ -58,6 +58,12 @@ namespace CarRent
                 sportCarAlert.Visible = false;
             }
             
+        }
+
+        private void cancleBtn_Click(object sender, EventArgs e)
+        {
+            // This will close the Rent window.
+            this.Close();
         }
     }
 }
