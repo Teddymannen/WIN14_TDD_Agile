@@ -29,5 +29,15 @@ namespace CarRent
             frm.ShowDialog();
             this.Close();
         }
+
+        private void startDate_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            startDate_textBox.Text = startDate.SelectionRange.Start.ToShortDateString();
+        }
+
+        private void endDate_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            endDate_texBox.Text = endDate.SelectionRange.Start.ToShortDateString();
+        }
     }
 }

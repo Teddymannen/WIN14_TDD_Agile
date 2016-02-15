@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.startDate = new System.Windows.Forms.MonthCalendar();
-            this.returnDate = new System.Windows.Forms.MonthCalendar();
+            this.endDate = new System.Windows.Forms.MonthCalendar();
             this.startDateLabel = new System.Windows.Forms.Label();
-            this.returnDateLabel = new System.Windows.Forms.Label();
+            this.endDateLabel = new System.Windows.Forms.Label();
             this.sportCar = new System.Windows.Forms.RadioButton();
             this.familyCar = new System.Windows.Forms.RadioButton();
             this.carType = new System.Windows.Forms.Label();
@@ -40,39 +40,47 @@
             this.cancleBtn = new System.Windows.Forms.Button();
             this.rentBtn = new System.Windows.Forms.Button();
             this.sportCarAlert = new System.Windows.Forms.Label();
+            this.startDate_textBox = new System.Windows.Forms.TextBox();
+            this.endDate_texBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // startDate
             // 
-            this.startDate.Location = new System.Drawing.Point(32, 136);
+            this.startDate.Location = new System.Drawing.Point(32, 122);
+            this.startDate.MaxSelectionCount = 1;
             this.startDate.Name = "startDate";
             this.startDate.TabIndex = 0;
+            this.startDate.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.startDate_DateChanged);
+            this.startDate.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.startDate_DateChanged);
             // 
-            // returnDate
+            // endDate
             // 
-            this.returnDate.Location = new System.Drawing.Point(270, 136);
-            this.returnDate.Name = "returnDate";
-            this.returnDate.TabIndex = 1;
+            this.endDate.Location = new System.Drawing.Point(270, 122);
+            this.endDate.MaxSelectionCount = 1;
+            this.endDate.Name = "endDate";
+            this.endDate.TabIndex = 1;
+            this.endDate.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.endDate_DateChanged);
+            this.endDate.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.endDate_DateChanged);
             // 
             // startDateLabel
             // 
             this.startDateLabel.AutoSize = true;
             this.startDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.startDateLabel.Location = new System.Drawing.Point(28, 116);
+            this.startDateLabel.Location = new System.Drawing.Point(28, 99);
             this.startDateLabel.Name = "startDateLabel";
-            this.startDateLabel.Size = new System.Drawing.Size(83, 20);
+            this.startDateLabel.Size = new System.Drawing.Size(50, 20);
             this.startDateLabel.TabIndex = 2;
             this.startDateLabel.Text = "From:";
             // 
-            // returnDateLabel
+            // endDateLabel
             // 
-            this.returnDateLabel.AutoSize = true;
-            this.returnDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.returnDateLabel.Location = new System.Drawing.Point(266, 116);
-            this.returnDateLabel.Name = "returnDateLabel";
-            this.returnDateLabel.Size = new System.Drawing.Size(97, 20);
-            this.returnDateLabel.TabIndex = 3;
-            this.returnDateLabel.Text = "To:";
+            this.endDateLabel.AutoSize = true;
+            this.endDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.endDateLabel.Location = new System.Drawing.Point(266, 99);
+            this.endDateLabel.Name = "endDateLabel";
+            this.endDateLabel.Size = new System.Drawing.Size(31, 20);
+            this.endDateLabel.TabIndex = 3;
+            this.endDateLabel.Text = "To:";
             // 
             // sportCar
             // 
@@ -112,7 +120,7 @@
             // 
             this.welcomeLabel.AutoSize = true;
             this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeLabel.Location = new System.Drawing.Point(26, 14);
+            this.welcomeLabel.Location = new System.Drawing.Point(26, 10);
             this.welcomeLabel.Name = "welcomeLabel";
             this.welcomeLabel.Size = new System.Drawing.Size(126, 31);
             this.welcomeLabel.TabIndex = 7;
@@ -122,7 +130,7 @@
             // 
             this.dateTextLabel.AutoSize = true;
             this.dateTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dateTextLabel.Location = new System.Drawing.Point(28, 59);
+            this.dateTextLabel.Location = new System.Drawing.Point(28, 48);
             this.dateTextLabel.Name = "dateTextLabel";
             this.dateTextLabel.Size = new System.Drawing.Size(279, 40);
             this.dateTextLabel.TabIndex = 8;
@@ -160,11 +168,27 @@
             this.sportCarAlert.TabIndex = 11;
             this.sportCarAlert.Text = "Sportcar includes an extra insurance cost";
             // 
+            // startDate_textBox
+            // 
+            this.startDate_textBox.Location = new System.Drawing.Point(32, 297);
+            this.startDate_textBox.Name = "startDate_textBox";
+            this.startDate_textBox.Size = new System.Drawing.Size(131, 20);
+            this.startDate_textBox.TabIndex = 12;
+            // 
+            // endDate_texBox
+            // 
+            this.endDate_texBox.Location = new System.Drawing.Point(270, 296);
+            this.endDate_texBox.Name = "endDate_texBox";
+            this.endDate_texBox.Size = new System.Drawing.Size(131, 20);
+            this.endDate_texBox.TabIndex = 13;
+            // 
             // ChooseCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 478);
+            this.Controls.Add(this.endDate_texBox);
+            this.Controls.Add(this.startDate_textBox);
             this.Controls.Add(this.sportCarAlert);
             this.Controls.Add(this.rentBtn);
             this.Controls.Add(this.cancleBtn);
@@ -173,9 +197,9 @@
             this.Controls.Add(this.carType);
             this.Controls.Add(this.familyCar);
             this.Controls.Add(this.sportCar);
-            this.Controls.Add(this.returnDateLabel);
+            this.Controls.Add(this.endDateLabel);
             this.Controls.Add(this.startDateLabel);
-            this.Controls.Add(this.returnDate);
+            this.Controls.Add(this.endDate);
             this.Controls.Add(this.startDate);
             this.Name = "ChooseCar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -189,9 +213,9 @@
         #endregion
 
         private System.Windows.Forms.MonthCalendar startDate;
-        private System.Windows.Forms.MonthCalendar returnDate;
+        private System.Windows.Forms.MonthCalendar endDate;
         private System.Windows.Forms.Label startDateLabel;
-        private System.Windows.Forms.Label returnDateLabel;
+        private System.Windows.Forms.Label endDateLabel;
         private System.Windows.Forms.RadioButton sportCar;
         private System.Windows.Forms.RadioButton familyCar;
         private System.Windows.Forms.Label carType;
@@ -200,6 +224,8 @@
         private System.Windows.Forms.Button cancleBtn;
         private System.Windows.Forms.Button rentBtn;
         private System.Windows.Forms.Label sportCarAlert;
+        private System.Windows.Forms.TextBox startDate_textBox;
+        private System.Windows.Forms.TextBox endDate_texBox;
     }
 }
 
