@@ -40,12 +40,11 @@
             this.cancleBtn = new System.Windows.Forms.Button();
             this.rentBtn = new System.Windows.Forms.Button();
             this.sportCarAlert = new System.Windows.Forms.Label();
-            this.startDate_textBox = new System.Windows.Forms.TextBox();
-            this.endDate_texBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // startDate
             // 
+            this.startDate.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
             this.startDate.Location = new System.Drawing.Point(32, 122);
             this.startDate.MaxSelectionCount = 1;
             this.startDate.Name = "startDate";
@@ -171,27 +170,11 @@
             this.sportCarAlert.Text = "Sportcar includes an extra insurance cost";
             this.sportCarAlert.Visible = false;
             // 
-            // startDate_textBox
-            // 
-            this.startDate_textBox.Location = new System.Drawing.Point(32, 297);
-            this.startDate_textBox.Name = "startDate_textBox";
-            this.startDate_textBox.Size = new System.Drawing.Size(131, 20);
-            this.startDate_textBox.TabIndex = 12;
-            // 
-            // endDate_texBox
-            // 
-            this.endDate_texBox.Location = new System.Drawing.Point(270, 296);
-            this.endDate_texBox.Name = "endDate_texBox";
-            this.endDate_texBox.Size = new System.Drawing.Size(131, 20);
-            this.endDate_texBox.TabIndex = 13;
-            // 
             // ChooseCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 478);
-            this.Controls.Add(this.endDate_texBox);
-            this.Controls.Add(this.startDate_textBox);
             this.Controls.Add(this.sportCarAlert);
             this.Controls.Add(this.rentBtn);
             this.Controls.Add(this.cancleBtn);
@@ -227,8 +210,6 @@
         private System.Windows.Forms.Button cancleBtn;
         private System.Windows.Forms.Button rentBtn;
         private System.Windows.Forms.Label sportCarAlert;
-        private System.Windows.Forms.TextBox startDate_textBox;
-        private System.Windows.Forms.TextBox endDate_texBox;
     }
 }
 
