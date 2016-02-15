@@ -81,26 +81,67 @@ namespace CarRentTest
             rent.PaymentAccepted = false;
             Assert.IsFalse(rent.PaymentAccepted);
         }
+
         
+       
+
         [TestMethod]
         public void TestSetDate_Ayaz()
         {
-            //TestSetDate(testa datum för tidigt t.ex, assert is equal)
-            rent.StartDate = DateTime.Parse("2016, 02, 11");
+            //TestSetDate(Testing Formats...)
+            rent.StartDate = DateTime.Parse("2016, 02, 15");
             Assert.AreEqual(DateTime.Today, rent.StartDate);
 
-            var format1 = DateTime.Parse("2016 02 11");
-            var format2 = DateTime.Parse("2016/02/11");
+            var format1 = DateTime.Parse("2016 02 15");
+            var format2 = DateTime.Parse("2016/02/15");
 
             Assert.AreEqual(format1, rent.StartDate);
             Assert.AreEqual(format2, rent.StartDate);
             
-            //var format3 = DateTime.Parse("11/02/2016");
-            //var format4 = DateTime.Parse("11.02.2016");
-
-            //Assert.AreEqual(format3, rent.StartDate);
-            //Assert.AreEqual(format4, rent.StartDate);
             
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(System.Exception))]
+        public void TestSetStartDateBeforeToday_Ayaz()
+        {
+            // Testing Past Date
+            rent.StartDate = DateTime.Parse("2016, 02, 11");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(System.Exception))]
+        public void TestSetEndDateBeforeStartDate_Ayaz()
+        {
+            //Testing EndDate
+            rent.StartDate = DateTime.Today;
+            rent.EndDate = DateTime.Parse("2016, 02, 11");
+        }
+
+        [TestMethod]
+        public void TestSetDate_EndDate_Ayaz()
+        {
+            //TestSetDate(Checking StartDate and EndDate)
+            var todayDate = DateTime.Today.Date;
+            var enddate = rent.EndDate;
+
+            Assert.AreEqual(rent.StartDate, todayDate);
+            Assert.AreEqual(rent.EndDate, enddate);
+
+        }
+
+        [TestMethod]
+        public void TestCheckBookingIsValidCorrect_Ayaz()
+        {
+            //Test Checking if Booking is Valid
+
+            rent.StartDate = DateTime.Parse("2016, 02, 15");
+            rent.EndDate = DateTime.Parse("2016, 02, 15");
+            rent.ChooseCar("sportcar");
+            rent.ValidatingInputValue();
+
+            Assert.IsTrue(rent.IsBookingValid);
+
         }
 
         [TestMethod]

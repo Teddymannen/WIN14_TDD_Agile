@@ -21,11 +21,49 @@ public class Rent
     {
         familyCar = new FamilyCar();
         sportCar = new SportCar();
+        StartDate = DateTime.Today;
+    }
+    public bool IsBookingValid { get; set; }
+    private DateTime startDate;
+
+    public DateTime StartDate
+    {
+        get
+        {
+            return startDate;
+        }
+        set
+        {
+            if (value >= DateTime.Today)
+            {
+                startDate = value;
+            }
+            else
+            {
+                throw new Exception("Time Error");
+            }
+        }
     }
 
-    public DateTime StartDate { get; set; }
-
-    public DateTime EndDate { get; set; }
+    private DateTime endDate;
+    public DateTime EndDate
+    {
+        get
+        {
+            return endDate;
+        }
+        set
+        {
+            if (value >= StartDate)
+            {
+                endDate = value;
+            }
+            else
+            {
+                throw new Exception("Time Error");
+            }
+        }
+    }
 
     public Double TotalDaysRent { get; set; }
 
@@ -73,19 +111,7 @@ public class Rent
         return total;
     
 }
-    public DateTime setDate(DateTime d)
-    {
-       
-        if (d >= DateTime.Today)
-        {
-      
-            return d;
-        }
-        else
-        {
-            throw new Exception("Time Error");
-        }
-    }
+    
     public double calcDaysRent(DateTime startDate, DateTime endDate)
     {
         var initialSetDate = (endDate - startDate).TotalDays;
@@ -116,6 +142,18 @@ public class Rent
         {
             throw new ArgumentException(String.Format("{0} är ingen giltig biltyp", carType));
         }
+    }
+    public bool ValidatingInputValue()
+    {
+        if(StartDate!=null && EndDate!= null && SelectedCar!=null)
+        {
+            IsBookingValid = true;
+        }
+        else
+        {
+            IsBookingValid = false;
+        }
+        return IsBookingValid;
     }
 
     public void CalculatePenaltyOrDiscount(DateTime returnDate)
