@@ -45,5 +45,13 @@ namespace CarRent
             frm.ShowDialog();
             this.Close();
         }
+
+        private void CancelBtn_Click(object sender, EventArgs e)
+        {
+            // Return to rent window
+            this.Close();
+            ChooseCar chooseCar = new ChooseCar();
+            chooseCar.ShowDialog();
+        }
     }
 }
