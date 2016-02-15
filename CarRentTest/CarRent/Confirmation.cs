@@ -28,13 +28,13 @@ namespace CarRent
             StartDate.Text = rent.StartDate.ToShortDateString();
             EndDate.Text = rent.EndDate.ToShortDateString();
             CarType.Text = rent.SelectedCar.ToString();
-            MileageCost.Text = rent.SelectedCar.MilageCost.ToString();
-            DailyFee.Text = rent.SelectedCar.DailyCost.ToString();
+            MileageCost.Text = rent.SelectedCar.MilageCost.ToString() + " kr/km";
+            DailyFee.Text = rent.SelectedCar.DailyCost.ToString() + " kr/day";
             if (rent.SelectedCar is SportCar)
             {
                 InsuranceLabel.Visible = true;
                 ExtraInsurance.Visible = true;
-                ExtraInsurance.Text = rent.SelectedCar.ExtraInsurance.ToString();
+                ExtraInsurance.Text = rent.SelectedCar.ExtraInsurance.ToString() + " kr";
             }
         }
 
