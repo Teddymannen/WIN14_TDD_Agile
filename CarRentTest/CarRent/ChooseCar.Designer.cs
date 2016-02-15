@@ -81,13 +81,6 @@
             this.endDateLabel.Size = new System.Drawing.Size(31, 20);
             this.endDateLabel.TabIndex = 3;
             this.endDateLabel.Text = "To:";
-            this.endDateLabel.AutoSize = true;
-            this.endDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.endDateLabel.Location = new System.Drawing.Point(266, 116);
-            this.endDateLabel.Name = "endDateLabel";
-            this.endDateLabel.Size = new System.Drawing.Size(31, 20);
-            this.endDateLabel.TabIndex = 3;
-            this.endDateLabel.Text = "To:";
             // 
             // sportCar
             // 
