@@ -44,6 +44,7 @@
             // 
             // startDate
             // 
+            this.startDate.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
             this.startDate.Location = new System.Drawing.Point(32, 122);
             this.startDate.MaxSelectionCount = 1;
             this.startDate.Name = "startDate";
