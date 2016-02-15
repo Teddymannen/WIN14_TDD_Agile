@@ -29,5 +29,18 @@ namespace CarRent
             frm.ShowDialog();
             this.Close();
         }
+
+        private void AlertBoxTrigger(object sender, EventArgs e)
+        {
+            if(sportCar.Checked)
+            {
+                sportCarAlert.Visible = true;
+            }
+            else
+            {
+                sportCarAlert.Visible = false;
+            }
+            
+        }
     }
 }
