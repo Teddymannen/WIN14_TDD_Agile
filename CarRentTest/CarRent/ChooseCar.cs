@@ -20,6 +20,8 @@ namespace CarRent
         private void ChooseCar_Load(object sender, EventArgs e)
         {
 
+            
+
         }
 
         private void rentBtn_Click(object sender, EventArgs e)
@@ -38,6 +40,19 @@ namespace CarRent
         private void endDate_DateChanged(object sender, DateRangeEventArgs e)
         {
             endDate_texBox.Text = endDate.SelectionRange.Start.ToShortDateString();
+        }
+
+        private void AlertBoxTrigger(object sender, EventArgs e)
+        {
+            if(sportCar.Checked)
+            {
+                sportCarAlert.Visible = true;
+            }
+            else
+            {
+                sportCarAlert.Visible = false;
+            }
+            
         }
     }
 }
