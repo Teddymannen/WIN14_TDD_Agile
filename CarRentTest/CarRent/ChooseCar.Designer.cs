@@ -81,13 +81,13 @@
             this.endDateLabel.Size = new System.Drawing.Size(31, 20);
             this.endDateLabel.TabIndex = 3;
             this.endDateLabel.Text = "To:";
-            this.returnDateLabel.AutoSize = true;
-            this.returnDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.returnDateLabel.Location = new System.Drawing.Point(266, 116);
-            this.returnDateLabel.Name = "returnDateLabel";
-            this.returnDateLabel.Size = new System.Drawing.Size(31, 20);
-            this.returnDateLabel.TabIndex = 3;
-            this.returnDateLabel.Text = "To:";
+            this.endDateLabel.AutoSize = true;
+            this.endDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.endDateLabel.Location = new System.Drawing.Point(266, 116);
+            this.endDateLabel.Name = "endDateLabel";
+            this.endDateLabel.Size = new System.Drawing.Size(31, 20);
+            this.endDateLabel.TabIndex = 3;
+            this.endDateLabel.Text = "To:";
             // 
             // sportCar
             // 
