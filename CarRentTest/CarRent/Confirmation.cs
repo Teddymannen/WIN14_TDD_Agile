@@ -20,10 +20,6 @@ namespace CarRent
             CarType.Text = "";
             MileageCost.Text = "";
             DailyFee.Text = "";
-
-
-
-
         }
 
         private void OkBtn_Click(object sender, EventArgs e)
