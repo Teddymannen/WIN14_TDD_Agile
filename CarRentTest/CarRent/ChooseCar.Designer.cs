@@ -40,7 +40,6 @@
             this.cancleBtn = new System.Windows.Forms.Button();
             this.rentBtn = new System.Windows.Forms.Button();
             this.sportCarAlert = new System.Windows.Forms.Label();
-            this.Today = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // startDate
@@ -57,6 +56,7 @@
             // 
             this.endDate.Location = new System.Drawing.Point(270, 122);
             this.endDate.MaxSelectionCount = 1;
+            this.endDate.MinDate = new System.DateTime(2016, 2, 15, 0, 0, 0, 0);
             this.endDate.Name = "endDate";
             this.endDate.TabIndex = 1;
             this.endDate.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.endDate_DateChanged);
@@ -172,23 +172,11 @@
             this.sportCarAlert.Text = "Sportcar includes an extra insurance cost";
             this.sportCarAlert.Visible = false;
             // 
-            // Today
-            // 
-            this.Today.AutoSize = true;
-            this.Today.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.Today.ForeColor = System.Drawing.Color.Red;
-            this.Today.Location = new System.Drawing.Point(286, 466);
-            this.Today.Name = "Today";
-            this.Today.Size = new System.Drawing.Size(204, 18);
-            this.Today.TabIndex = 12;
-            this.Today.Text = "End date cant be before today";
-            // 
             // ChooseCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 497);
-            this.Controls.Add(this.Today);
             this.Controls.Add(this.sportCarAlert);
             this.Controls.Add(this.rentBtn);
             this.Controls.Add(this.cancleBtn);
@@ -224,7 +212,6 @@
         private System.Windows.Forms.Button cancleBtn;
         private System.Windows.Forms.Button rentBtn;
         private System.Windows.Forms.Label sportCarAlert;
-        private System.Windows.Forms.Label Today;
     }
 }
 

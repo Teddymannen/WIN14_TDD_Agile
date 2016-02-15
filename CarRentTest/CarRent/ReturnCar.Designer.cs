@@ -37,7 +37,6 @@
             this.milesDriven_TextBox = new System.Windows.Forms.TextBox();
             this.carTypeLabel = new System.Windows.Forms.Label();
             this.carType = new System.Windows.Forms.Label();
-            this.notesLabel = new System.Windows.Forms.Label();
             this.calcButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,6 +48,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.totalMilesCost = new System.Windows.Forms.Label();
             this.totalPenaltyCost = new System.Windows.Forms.Label();
+            this.extraInsurance = new System.Windows.Forms.Label();
+            this.extraInsuranceLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // welcomeAdmin
@@ -65,7 +66,7 @@
             // 
             this.totalLabel.AutoSize = true;
             this.totalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalLabel.Location = new System.Drawing.Point(23, 354);
+            this.totalLabel.Location = new System.Drawing.Point(26, 393);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(44, 20);
             this.totalLabel.TabIndex = 1;
@@ -75,7 +76,7 @@
             // 
             this.totalCostAmount.AutoSize = true;
             this.totalCostAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.totalCostAmount.Location = new System.Drawing.Point(135, 354);
+            this.totalCostAmount.Location = new System.Drawing.Point(138, 393);
             this.totalCostAmount.Name = "totalCostAmount";
             this.totalCostAmount.Size = new System.Drawing.Size(54, 20);
             this.totalCostAmount.TabIndex = 2;
@@ -138,18 +139,9 @@
             this.carType.TabIndex = 10;
             this.carType.Text = "placeholder";
             // 
-            // notesLabel
-            // 
-            this.notesLabel.AutoSize = true;
-            this.notesLabel.Location = new System.Drawing.Point(139, 378);
-            this.notesLabel.Name = "notesLabel";
-            this.notesLabel.Size = new System.Drawing.Size(39, 13);
-            this.notesLabel.TabIndex = 11;
-            this.notesLabel.Text = "(notes)";
-            // 
             // calcButton
             // 
-            this.calcButton.Location = new System.Drawing.Point(22, 377);
+            this.calcButton.Location = new System.Drawing.Point(30, 416);
             this.calcButton.Name = "calcButton";
             this.calcButton.Size = new System.Drawing.Size(65, 27);
             this.calcButton.TabIndex = 12;
@@ -160,7 +152,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 318);
+            this.label3.Location = new System.Drawing.Point(21, 318);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 13;
@@ -189,7 +181,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 271);
+            this.label1.Location = new System.Drawing.Point(21, 271);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 15;
@@ -228,7 +220,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 294);
+            this.label9.Location = new System.Drawing.Point(21, 294);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 13);
             this.label9.TabIndex = 19;
@@ -254,11 +246,34 @@
             this.totalPenaltyCost.TabIndex = 21;
             this.totalPenaltyCost.Text = "extradays * cost-per-day";
             // 
+            // extraInsurance
+            // 
+            this.extraInsurance.AutoSize = true;
+            this.extraInsurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.extraInsurance.Location = new System.Drawing.Point(139, 343);
+            this.extraInsurance.Name = "extraInsurance";
+            this.extraInsurance.Size = new System.Drawing.Size(95, 16);
+            this.extraInsurance.TabIndex = 23;
+            this.extraInsurance.Text = "extraInsurance";
+            this.extraInsurance.Visible = false;
+            // 
+            // extraInsuranceLabel
+            // 
+            this.extraInsuranceLabel.AutoSize = true;
+            this.extraInsuranceLabel.Location = new System.Drawing.Point(21, 343);
+            this.extraInsuranceLabel.Name = "extraInsuranceLabel";
+            this.extraInsuranceLabel.Size = new System.Drawing.Size(80, 13);
+            this.extraInsuranceLabel.TabIndex = 22;
+            this.extraInsuranceLabel.Text = "Extra insurance";
+            this.extraInsuranceLabel.Visible = false;
+            // 
             // ReturnCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 457);
+            this.Controls.Add(this.extraInsurance);
+            this.Controls.Add(this.extraInsuranceLabel);
             this.Controls.Add(this.totalPenaltyCost);
             this.Controls.Add(this.totalMilesCost);
             this.Controls.Add(this.label9);
@@ -270,7 +285,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.calcButton);
-            this.Controls.Add(this.notesLabel);
             this.Controls.Add(this.carType);
             this.Controls.Add(this.carTypeLabel);
             this.Controls.Add(this.milesDriven_TextBox);
@@ -299,7 +313,6 @@
         private System.Windows.Forms.TextBox milesDriven_TextBox;
         private System.Windows.Forms.Label carTypeLabel;
         private System.Windows.Forms.Label carType;
-        private System.Windows.Forms.Label notesLabel;
         private System.Windows.Forms.Button calcButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -311,5 +324,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label totalMilesCost;
         private System.Windows.Forms.Label totalPenaltyCost;
+        private System.Windows.Forms.Label extraInsurance;
+        private System.Windows.Forms.Label extraInsuranceLabel;
     }
 }

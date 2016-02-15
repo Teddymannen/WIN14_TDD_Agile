@@ -18,6 +18,8 @@ namespace CarRent
             InitializeComponent();
             rent = new Rent();
             rent.StartDate = startDate.SelectionRange.Start;
+            startDate.MinDate = DateTime.Today;
+            endDate.MinDate = DateTime.Today;
         }
 
         private void ChooseCar_Load(object sender, EventArgs e)
@@ -37,7 +39,9 @@ namespace CarRent
 
         public void startDate_DateChanged(object sender, DateRangeEventArgs e)
         {
-            rent.StartDate = startDate.SelectionRange.Start; 
+            rent.StartDate = startDate.SelectionRange.Start;
+            endDate.MinDate = (startDate.SelectionRange.Start).AddDays(1);
+            rent.EndDate = (startDate.SelectionRange.Start).AddDays(1);
         }
 
         private void endDate_DateChanged(object sender, DateRangeEventArgs e)

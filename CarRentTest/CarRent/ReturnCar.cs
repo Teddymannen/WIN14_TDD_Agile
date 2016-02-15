@@ -26,6 +26,13 @@ namespace CarRent
             totalMilesCost.Text = "0";
             totalPenaltyCost.Text = "0";
             totalCostAmount.Text = "0";
+            if(rent.SelectedCar is SportCar)
+            {
+                extraInsurance.Text = rent.SelectedCar.ExtraInsurance.ToString();
+                extraInsurance.Visible = true;
+                extraInsuranceLabel.Visible = true;
+            }
+            
         }
 
         private void ReturnCar_Load(object sender, EventArgs e)
@@ -58,7 +65,7 @@ namespace CarRent
             double milesDriven = 0;
             double.TryParse(milesDriven_TextBox.Text, out milesDriven);
 
-            totalCostAmount.Text = rent.CalcTotal(milesDriven, rent.Days, carType.Text).ToString();
+            totalCostAmount.Text = rent.CalcTotal(milesDriven, double.Parse(actualDays.Text), carType.Text).ToString();
         }
     }
 }

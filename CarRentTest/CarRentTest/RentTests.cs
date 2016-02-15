@@ -22,11 +22,11 @@ namespace CarRentTest
         [TestMethod]
         public void TestCalcNumDays_Teddy()
         {
-            rent.StartDate = DateTime.Parse("2016-02-11");
-            rent.EndDate = DateTime.Parse("2016-02-20");
+            rent.StartDate = DateTime.Parse("2016-02-21");
+            rent.EndDate = DateTime.Parse("2016-02-24");
 
             rent.TotalDaysRent = (rent.EndDate - rent.StartDate).TotalDays;
-            Assert.AreEqual(rent.TotalDaysRent, 9);
+            Assert.AreEqual(rent.TotalDaysRent, 3);
         }
 
         [TestMethod]
