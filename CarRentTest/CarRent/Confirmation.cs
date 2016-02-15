@@ -15,6 +15,15 @@ namespace CarRent
         public Confirmation()
         {
             InitializeComponent();
+            StartDate.Text = "";
+            EndDate.Text = "";
+            CarType.Text = "";
+            MileageCost.Text = "";
+            DailyFee.Text = "";
+
+
+
+
         }
 
         private void OkBtn_Click(object sender, EventArgs e)
