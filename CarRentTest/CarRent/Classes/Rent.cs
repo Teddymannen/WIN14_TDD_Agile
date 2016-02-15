@@ -14,7 +14,9 @@ public class Rent
 {
     FamilyCar familyCar;
     SportCar sportCar;
-    
+    public double penaltyCost { get; set; }
+    public double discount { get; set; }
+
     public Rent()
     {
         familyCar = new FamilyCar();
