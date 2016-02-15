@@ -12,9 +12,12 @@ namespace CarRent
 {
     public partial class ChooseCar : Form
     {
+        Rent rent;
         public ChooseCar()
         {
             InitializeComponent();
+            rent = new Rent();
+
         }
 
         private void ChooseCar_Load(object sender, EventArgs e)
@@ -26,7 +29,7 @@ namespace CarRent
 
         private void rentBtn_Click(object sender, EventArgs e)
         {
-            Confirmation frm = new Confirmation();
+            Confirmation frm = new Confirmation(rent);
             this.Visible = false;
             frm.ShowDialog();
             this.Close();
@@ -34,12 +37,12 @@ namespace CarRent
 
         public void startDate_DateChanged(object sender, DateRangeEventArgs e)
         {
-            startDate_textBox.Text = startDate.SelectionRange.Start.ToShortDateString();
+            rent.StartDate = startDate.SelectionRange.Start; 
         }
 
         private void endDate_DateChanged(object sender, DateRangeEventArgs e)
         {
-            endDate_texBox.Text = endDate.SelectionRange.Start.ToShortDateString();
+            rent.EndDate = endDate.SelectionRange.Start;
         }
 
         private void AlertBoxTrigger(object sender, EventArgs e)
@@ -47,9 +50,11 @@ namespace CarRent
             if(sportCar.Checked)
             {
                 sportCarAlert.Visible = true;
+                rent.ChooseCar("sportcar");
             }
             else
             {
+                rent.ChooseCar("familycar");
                 sportCarAlert.Visible = false;
             }
             
