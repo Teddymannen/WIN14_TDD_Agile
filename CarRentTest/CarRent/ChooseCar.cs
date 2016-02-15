@@ -59,5 +59,11 @@ namespace CarRent
             }
             
         }
+
+        private void cancleBtn_Click(object sender, EventArgs e)
+        {
+            // This will close the Rent window.
+            this.Close();
+        }
     }
 }
