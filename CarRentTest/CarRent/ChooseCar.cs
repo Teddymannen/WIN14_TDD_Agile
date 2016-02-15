@@ -17,7 +17,7 @@ namespace CarRent
         {
             InitializeComponent();
             rent = new Rent();
-
+            rent.StartDate = startDate.SelectionRange.Start;
         }
 
         private void ChooseCar_Load(object sender, EventArgs e)

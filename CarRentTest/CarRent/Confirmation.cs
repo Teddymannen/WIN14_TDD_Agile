@@ -27,9 +27,15 @@ namespace CarRent
             InitializeComponent();
             StartDate.Text = rent.StartDate.ToShortDateString();
             EndDate.Text = rent.EndDate.ToShortDateString();
-            CarType.Text = "";
+            CarType.Text = rent.SelectedCar.ToString();
             MileageCost.Text = rent.SelectedCar.MilageCost.ToString();
             DailyFee.Text = rent.SelectedCar.DailyCost.ToString();
+            if (rent.SelectedCar is SportCar)
+            {
+                InsuranceLabel.Visible = true;
+                ExtraInsurance.Visible = true;
+                ExtraInsurance.Text = rent.SelectedCar.ExtraInsurance.ToString();
+            }
         }
 
         private void OkBtn_Click(object sender, EventArgs e)

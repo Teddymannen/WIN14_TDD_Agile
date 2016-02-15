@@ -86,7 +86,7 @@
             // 
             this.sportCar.AutoSize = true;
             this.sportCar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.sportCar.Location = new System.Drawing.Point(32, 355);
+            this.sportCar.Location = new System.Drawing.Point(32, 328);
             this.sportCar.Name = "sportCar";
             this.sportCar.Size = new System.Drawing.Size(88, 24);
             this.sportCar.TabIndex = 4;
@@ -99,7 +99,7 @@
             // 
             this.familyCar.AutoSize = true;
             this.familyCar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.familyCar.Location = new System.Drawing.Point(143, 355);
+            this.familyCar.Location = new System.Drawing.Point(143, 328);
             this.familyCar.Name = "familyCar";
             this.familyCar.Size = new System.Drawing.Size(94, 24);
             this.familyCar.TabIndex = 5;
@@ -112,7 +112,7 @@
             // 
             this.carType.AutoSize = true;
             this.carType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.carType.Location = new System.Drawing.Point(28, 328);
+            this.carType.Location = new System.Drawing.Point(28, 301);
             this.carType.Name = "carType";
             this.carType.Size = new System.Drawing.Size(313, 20);
             this.carType.TabIndex = 6;
@@ -165,7 +165,7 @@
             this.sportCarAlert.AutoSize = true;
             this.sportCarAlert.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.sportCarAlert.ForeColor = System.Drawing.Color.Red;
-            this.sportCarAlert.Location = new System.Drawing.Point(29, 388);
+            this.sportCarAlert.Location = new System.Drawing.Point(29, 361);
             this.sportCarAlert.Name = "sportCarAlert";
             this.sportCarAlert.Size = new System.Drawing.Size(280, 18);
             this.sportCarAlert.TabIndex = 11;
@@ -203,7 +203,7 @@
             this.Controls.Add(this.startDate);
             this.Name = "ChooseCar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Choose Car and Date";
+            this.Text = "0";
             this.Load += new System.EventHandler(this.ChooseCar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
