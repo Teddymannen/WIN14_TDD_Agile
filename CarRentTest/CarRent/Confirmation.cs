@@ -28,8 +28,8 @@ namespace CarRent
             StartDate.Text = rent.StartDate.ToShortDateString();
             EndDate.Text = rent.EndDate.ToShortDateString();
             CarType.Text = "";
-            MileageCost.Text = "";
-            DailyFee.Text = "";
+            MileageCost.Text = rent.SelectedCar.MilageCost.ToString();
+            DailyFee.Text = rent.SelectedCar.DailyCost.ToString();
         }
 
         private void OkBtn_Click(object sender, EventArgs e)
