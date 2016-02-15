@@ -10,23 +10,16 @@ using System.Windows.Forms;
 
 namespace CarRent
 {
-    public partial class ChooseCar : Form
+    public partial class Confirmation : Form
     {
-        public ChooseCar()
+        public Confirmation()
         {
             InitializeComponent();
         }
 
-        private void ChooseCar_Load(object sender, EventArgs e)
+        private void OkBtn_Click(object sender, EventArgs e)
         {
-           
-            
-
-        }
-
-        private void rentBtn_Click(object sender, EventArgs e)
-        {
-            Confirmation frm = new Confirmation();
+            ReturnCar frm = new ReturnCar();
             this.Visible = false;
             frm.ShowDialog();
             this.Close();
