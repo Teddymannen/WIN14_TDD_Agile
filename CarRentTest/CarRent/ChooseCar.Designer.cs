@@ -40,6 +40,7 @@
             this.cancleBtn = new System.Windows.Forms.Button();
             this.rentBtn = new System.Windows.Forms.Button();
             this.sportCarAlert = new System.Windows.Forms.Label();
+            this.Today = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // startDate
@@ -146,6 +147,7 @@
             this.cancleBtn.TabIndex = 9;
             this.cancleBtn.Text = "Cancel";
             this.cancleBtn.UseVisualStyleBackColor = true;
+            this.cancleBtn.Click += new System.EventHandler(this.cancleBtn_Click);
             // 
             // rentBtn
             // 
@@ -161,20 +163,32 @@
             // sportCarAlert
             // 
             this.sportCarAlert.AutoSize = true;
-            this.sportCarAlert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.sportCarAlert.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.sportCarAlert.ForeColor = System.Drawing.Color.Red;
             this.sportCarAlert.Location = new System.Drawing.Point(29, 361);
             this.sportCarAlert.Name = "sportCarAlert";
-            this.sportCarAlert.Size = new System.Drawing.Size(269, 17);
+            this.sportCarAlert.Size = new System.Drawing.Size(280, 18);
             this.sportCarAlert.TabIndex = 11;
             this.sportCarAlert.Text = "Sportcar includes an extra insurance cost";
             this.sportCarAlert.Visible = false;
+            // 
+            // Today
+            // 
+            this.Today.AutoSize = true;
+            this.Today.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.Today.ForeColor = System.Drawing.Color.Red;
+            this.Today.Location = new System.Drawing.Point(286, 466);
+            this.Today.Name = "Today";
+            this.Today.Size = new System.Drawing.Size(204, 18);
+            this.Today.TabIndex = 12;
+            this.Today.Text = "End date cant be before today";
             // 
             // ChooseCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 478);
+            this.ClientSize = new System.Drawing.Size(524, 497);
+            this.Controls.Add(this.Today);
             this.Controls.Add(this.sportCarAlert);
             this.Controls.Add(this.rentBtn);
             this.Controls.Add(this.cancleBtn);
@@ -210,6 +224,7 @@
         private System.Windows.Forms.Button cancleBtn;
         private System.Windows.Forms.Button rentBtn;
         private System.Windows.Forms.Label sportCarAlert;
+        private System.Windows.Forms.Label Today;
     }
 }
 

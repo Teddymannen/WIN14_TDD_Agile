@@ -30,23 +30,35 @@ namespace CarRentTest
         }
 
         [TestMethod]
-        public void TestChooseCar_Fredrik()
+        public void TestChooseFamilyCar_Fredrik()
         {
-            // Välj familjebil och kolla att den är ledig
+            // Test to choose Family car
             rent.ChooseCar("familycar");
-            var selectedCar = rent.SelectedCar;
-            var familyCar = new FamilyCar();
-            Assert.AreEqual(familyCar.GetType(), selectedCar.GetType());
+
+            // Make sure a car has been selected
+            Assert.IsNotNull(rent.SelectedCar);
+
+            // Make sure selected car is a family car
+            Assert.IsTrue(rent.SelectedCar is FamilyCar);
+
+            // Make sure selected car is available to rent
             Assert.IsFalse(rent.SelectedCar.IsRented);
+        }
 
-            if(rent.SelectedCar is FamilyCar)
-            {
+        [TestMethod]
+        public void TestChooseSportCar_Fredrik()
+        {
+            // Test to choose Sport car
+            rent.ChooseCar("sportcar");
 
-            }
+            // Make sure a car has been selected
+            Assert.IsNotNull(rent.SelectedCar);
 
-            // Välj sportbil och kolla att den är ledig
-          //  var sportCar = rent.ChooseCar("sportcar");
-         //   Assert.IsFalse(sportCar.IsRented);
+            // Make sure selected car is a sport car
+            Assert.IsTrue(rent.SelectedCar is SportCar);
+
+            // Make sure selected car is available to rent
+            Assert.IsFalse(rent.SelectedCar.IsRented);
         }
 
         [TestMethod]
@@ -120,14 +132,15 @@ namespace CarRentTest
         public void TestTotalRentCostFamilyCarZeroValue_Marita()
         {
             var total = rent.CalcTotal(0, 3, "FamilyCar");
+            Assert.IsNotNull(true);
 
         }
 
         [TestMethod]
         public void TestTotalRentCostSportsCarZeroValue_Marita()
         {
-            var total = rent.CalcTotal(0, 3, "FamilyCar");
-
+            var total = rent.CalcTotal(0, 3, "SportCar");
+            Assert.IsNotNull(true);
         }
 
         [TestMethod]
