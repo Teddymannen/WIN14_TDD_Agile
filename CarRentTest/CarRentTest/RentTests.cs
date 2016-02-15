@@ -142,11 +142,11 @@ namespace CarRentTest
             // Återlämningsdatum som gått över tiden med 25 dagar
             rent.CalculatePenaltyOrDiscount(DateTime.Parse("2016, 06, 30"));
 
-            var costWithPenalty = rent.CalcTotal(50, 4, "FamilyCar");
+            var costWithPenalty = rent.CalcTotal(50, 29, "FamilyCar");
 
             Assert.AreEqual(500, costWithoutPenalty);
-            // Penalty ska vara 200 x 25 extra (25 dagar á 200)
-            Assert.AreEqual(500 + 25 * 200, costWithPenalty);
+            // Penalty ska vara 100 x 25 extra (25 dagar á 100)
+            Assert.AreEqual(3000 + 25 * 100, costWithPenalty);
 
         }
 

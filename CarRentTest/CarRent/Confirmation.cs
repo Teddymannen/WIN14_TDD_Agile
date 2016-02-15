@@ -12,19 +12,11 @@ namespace CarRent
 {
     public partial class Confirmation : Form
     {
-
-        public Confirmation()
-        {
-            InitializeComponent();
-            StartDate.Text = "";
-            EndDate.Text = "";
-            CarType.Text = "";
-            MileageCost.Text = "";
-            DailyFee.Text = "";
-        }
+        Rent rent;
         public Confirmation(Rent rent)
         {
             InitializeComponent();
+            this.rent = rent;
             StartDate.Text = rent.StartDate.ToShortDateString();
             EndDate.Text = rent.EndDate.ToShortDateString();
             CarType.Text = rent.SelectedCar.ToString();
@@ -40,7 +32,7 @@ namespace CarRent
 
         private void OkBtn_Click(object sender, EventArgs e)
         {
-            ReturnCar frm = new ReturnCar();
+            ReturnCar frm = new ReturnCar(this.rent);
             this.Visible = false;
             frm.ShowDialog();
             this.Close();

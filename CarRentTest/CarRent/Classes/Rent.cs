@@ -14,22 +14,22 @@ public class Rent
 {
     FamilyCar familyCar;
     SportCar sportCar;
-    double penaltyCost;
-    double discount;
-    
+
     public Rent()
     {
         familyCar = new FamilyCar();
         sportCar = new SportCar();
     }
 
+    public double penaltyCost { get; set; }
+    public double discount { get; set; }
     public DateTime StartDate { get; set; }
 
     public DateTime EndDate { get; set; }
 
     public Double TotalDaysRent { get; set; }
 
-    public int Days { get; set; }
+    public double Days { get; set; }
 
     public Car SelectedCar { get; set; }
 
@@ -126,7 +126,7 @@ public class Rent
         var numberOfDaysOverdue = dt.TotalDays;
         if(numberOfDaysOverdue > 0)
         {
-            penaltyCost = numberOfDaysOverdue * 200;
+            penaltyCost = numberOfDaysOverdue * 100;
         }
         else if (numberOfDaysOverdue < 0)
         {
