@@ -56,7 +56,7 @@
             // 
             this.welcomeAdmin.AutoSize = true;
             this.welcomeAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeAdmin.Location = new System.Drawing.Point(212, 9);
+            this.welcomeAdmin.Location = new System.Drawing.Point(74, 9);
             this.welcomeAdmin.Name = "welcomeAdmin";
             this.welcomeAdmin.Size = new System.Drawing.Size(224, 31);
             this.welcomeAdmin.TabIndex = 0;
@@ -66,7 +66,7 @@
             // 
             this.totalLabel.AutoSize = true;
             this.totalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalLabel.Location = new System.Drawing.Point(26, 393);
+            this.totalLabel.Location = new System.Drawing.Point(26, 355);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(44, 20);
             this.totalLabel.TabIndex = 1;
@@ -76,7 +76,7 @@
             // 
             this.totalCostAmount.AutoSize = true;
             this.totalCostAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.totalCostAmount.Location = new System.Drawing.Point(138, 393);
+            this.totalCostAmount.Location = new System.Drawing.Point(101, 355);
             this.totalCostAmount.Name = "totalCostAmount";
             this.totalCostAmount.Size = new System.Drawing.Size(54, 20);
             this.totalCostAmount.TabIndex = 2;
@@ -86,7 +86,7 @@
             // 
             this.milesDrivenLabel.AutoSize = true;
             this.milesDrivenLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.milesDrivenLabel.Location = new System.Drawing.Point(20, 238);
+            this.milesDrivenLabel.Location = new System.Drawing.Point(20, 200);
             this.milesDrivenLabel.Name = "milesDrivenLabel";
             this.milesDrivenLabel.Size = new System.Drawing.Size(91, 20);
             this.milesDrivenLabel.TabIndex = 3;
@@ -96,7 +96,7 @@
             // 
             this.actualReturnDateLabel.AutoSize = true;
             this.actualReturnDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actualReturnDateLabel.Location = new System.Drawing.Point(20, 176);
+            this.actualReturnDateLabel.Location = new System.Drawing.Point(20, 138);
             this.actualReturnDateLabel.Name = "actualReturnDateLabel";
             this.actualReturnDateLabel.Size = new System.Drawing.Size(97, 20);
             this.actualReturnDateLabel.TabIndex = 5;
@@ -105,15 +105,15 @@
             // returnDate
             // 
             this.returnDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.returnDate.Location = new System.Drawing.Point(155, 174);
+            this.returnDate.Location = new System.Drawing.Point(155, 136);
             this.returnDate.Name = "returnDate";
-            this.returnDate.Size = new System.Drawing.Size(200, 22);
+            this.returnDate.Size = new System.Drawing.Size(178, 22);
             this.returnDate.TabIndex = 7;
             this.returnDate.ValueChanged += new System.EventHandler(this.returnDate_ValueChanged);
             // 
             // milesDriven_TextBox
             // 
-            this.milesDriven_TextBox.Location = new System.Drawing.Point(154, 240);
+            this.milesDriven_TextBox.Location = new System.Drawing.Point(154, 202);
             this.milesDriven_TextBox.Name = "milesDriven_TextBox";
             this.milesDriven_TextBox.Size = new System.Drawing.Size(100, 20);
             this.milesDriven_TextBox.TabIndex = 8;
@@ -123,7 +123,7 @@
             // 
             this.carTypeLabel.AutoSize = true;
             this.carTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carTypeLabel.Location = new System.Drawing.Point(20, 110);
+            this.carTypeLabel.Location = new System.Drawing.Point(20, 72);
             this.carTypeLabel.Name = "carTypeLabel";
             this.carTypeLabel.Size = new System.Drawing.Size(68, 20);
             this.carTypeLabel.TabIndex = 9;
@@ -133,7 +133,7 @@
             // 
             this.carType.AutoSize = true;
             this.carType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.carType.Location = new System.Drawing.Point(152, 113);
+            this.carType.Location = new System.Drawing.Point(152, 75);
             this.carType.Name = "carType";
             this.carType.Size = new System.Drawing.Size(80, 16);
             this.carType.TabIndex = 10;
@@ -141,7 +141,7 @@
             // 
             // calcButton
             // 
-            this.calcButton.Location = new System.Drawing.Point(30, 416);
+            this.calcButton.Location = new System.Drawing.Point(30, 378);
             this.calcButton.Name = "calcButton";
             this.calcButton.Size = new System.Drawing.Size(65, 27);
             this.calcButton.TabIndex = 12;
@@ -152,7 +152,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 318);
+            this.label3.Location = new System.Drawing.Point(21, 280);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 13;
@@ -162,7 +162,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 144);
+            this.label4.Location = new System.Drawing.Point(20, 106);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 20);
             this.label4.TabIndex = 13;
@@ -172,7 +172,7 @@
             // 
             this.daysBooked.AutoSize = true;
             this.daysBooked.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.daysBooked.Location = new System.Drawing.Point(152, 147);
+            this.daysBooked.Location = new System.Drawing.Point(152, 109);
             this.daysBooked.Name = "daysBooked";
             this.daysBooked.Size = new System.Drawing.Size(80, 16);
             this.daysBooked.TabIndex = 14;
@@ -181,7 +181,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 271);
+            this.label1.Location = new System.Drawing.Point(21, 233);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 15;
@@ -191,7 +191,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 207);
+            this.label6.Location = new System.Drawing.Point(20, 169);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 20);
             this.label6.TabIndex = 16;
@@ -201,7 +201,7 @@
             // 
             this.actualDays.AutoSize = true;
             this.actualDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.actualDays.Location = new System.Drawing.Point(152, 210);
+            this.actualDays.Location = new System.Drawing.Point(152, 172);
             this.actualDays.Name = "actualDays";
             this.actualDays.Size = new System.Drawing.Size(80, 16);
             this.actualDays.TabIndex = 17;
@@ -210,17 +210,17 @@
             // totalDailyCost
             // 
             this.totalDailyCost.AutoSize = true;
-            this.totalDailyCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.totalDailyCost.Location = new System.Drawing.Point(139, 271);
+            this.totalDailyCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalDailyCost.Location = new System.Drawing.Point(151, 233);
             this.totalDailyCost.Name = "totalDailyCost";
-            this.totalDailyCost.Size = new System.Drawing.Size(125, 16);
+            this.totalDailyCost.Size = new System.Drawing.Size(97, 13);
             this.totalDailyCost.TabIndex = 18;
             this.totalDailyCost.Text = "days * cost-per-day";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 294);
+            this.label9.Location = new System.Drawing.Point(21, 256);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 13);
             this.label9.TabIndex = 19;
@@ -229,30 +229,30 @@
             // totalMilesCost
             // 
             this.totalMilesCost.AutoSize = true;
-            this.totalMilesCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.totalMilesCost.Location = new System.Drawing.Point(139, 294);
+            this.totalMilesCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalMilesCost.Location = new System.Drawing.Point(151, 256);
             this.totalMilesCost.Name = "totalMilesCost";
-            this.totalMilesCost.Size = new System.Drawing.Size(129, 16);
+            this.totalMilesCost.Size = new System.Drawing.Size(99, 13);
             this.totalMilesCost.TabIndex = 20;
             this.totalMilesCost.Text = "miles * cost-per-mile";
             // 
             // totalPenaltyCost
             // 
             this.totalPenaltyCost.AutoSize = true;
-            this.totalPenaltyCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.totalPenaltyCost.Location = new System.Drawing.Point(139, 318);
+            this.totalPenaltyCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPenaltyCost.Location = new System.Drawing.Point(151, 280);
             this.totalPenaltyCost.Name = "totalPenaltyCost";
-            this.totalPenaltyCost.Size = new System.Drawing.Size(154, 16);
+            this.totalPenaltyCost.Size = new System.Drawing.Size(120, 13);
             this.totalPenaltyCost.TabIndex = 21;
             this.totalPenaltyCost.Text = "extradays * cost-per-day";
             // 
             // extraInsurance
             // 
             this.extraInsurance.AutoSize = true;
-            this.extraInsurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.extraInsurance.Location = new System.Drawing.Point(139, 343);
+            this.extraInsurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.extraInsurance.Location = new System.Drawing.Point(151, 305);
             this.extraInsurance.Name = "extraInsurance";
-            this.extraInsurance.Size = new System.Drawing.Size(95, 16);
+            this.extraInsurance.Size = new System.Drawing.Size(77, 13);
             this.extraInsurance.TabIndex = 23;
             this.extraInsurance.Text = "extraInsurance";
             this.extraInsurance.Visible = false;
@@ -260,7 +260,7 @@
             // extraInsuranceLabel
             // 
             this.extraInsuranceLabel.AutoSize = true;
-            this.extraInsuranceLabel.Location = new System.Drawing.Point(21, 343);
+            this.extraInsuranceLabel.Location = new System.Drawing.Point(21, 305);
             this.extraInsuranceLabel.Name = "extraInsuranceLabel";
             this.extraInsuranceLabel.Size = new System.Drawing.Size(80, 13);
             this.extraInsuranceLabel.TabIndex = 22;
@@ -271,7 +271,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 457);
+            this.ClientSize = new System.Drawing.Size(377, 417);
             this.Controls.Add(this.extraInsurance);
             this.Controls.Add(this.extraInsuranceLabel);
             this.Controls.Add(this.totalPenaltyCost);
