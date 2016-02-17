@@ -101,15 +101,14 @@ namespace CarRentTest
         public void TestSetDate_Ayaz()
         {
             //TestSetDate(Testing Formats...)
-            rent.StartDate = DateTime.Parse("2016, 02, 15");
+            rent.StartDate = DateTime.Parse("2016, 02, 17");
             Assert.AreEqual(DateTime.Today, rent.StartDate);
 
-            var format1 = DateTime.Parse("2016 02 15");
-            var format2 = DateTime.Parse("2016/02/15");
+            var format1 = DateTime.Parse("2016 02 17");
+            var format2 = DateTime.Parse("2016/02/17");
 
             Assert.AreEqual(format1, rent.StartDate);
             Assert.AreEqual(format2, rent.StartDate);
-            
             
         }
 
@@ -144,11 +143,12 @@ namespace CarRentTest
 
         [TestMethod]
         public void TestCheckBookingIsValidCorrect_Ayaz()
+
         {
             //Test Checking if Booking is Valid
 
-            rent.StartDate = DateTime.Parse("2016, 02, 15");
-            rent.EndDate = DateTime.Parse("2016, 02, 15");
+            rent.StartDate = DateTime.Parse("2017, 02, 17");
+            rent.EndDate = DateTime.Parse("2017, 02, 17");
             rent.ChooseCar("sportcar");
             rent.ValidatingInputValue();
 
