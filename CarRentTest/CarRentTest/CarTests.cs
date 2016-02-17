@@ -22,8 +22,8 @@ namespace CarRentTest
             Assert.AreEqual(150, sportcar.ExtraInsurance);
             sportcar.ExtraInsurance = 350;
             Assert.IsTrue(sportcar.ExtraInsurance > 150);
-
-            
+            sportcar.ExtraInsurance = 20;
+            Assert.AreEqual(150, sportcar.ExtraInsurance);
         }
         [TestMethod]
         public void TestCarMilesIsAboveZero_Teddy()
