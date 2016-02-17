@@ -75,12 +75,12 @@ namespace CarRentTest
             try
             {
                 // Testa välja bil med okänd biltyp
-                var car = rent.ChooseCar("Trabant");
+                var car = rent.ChooseCar("Cykel");
             }
             catch (ArgumentException e)
             {
                 // Fånga upp och kolla att felmeddelandet är korrekt
-                Assert.AreEqual("Trabant är ingen giltig biltyp", e.Message);
+                Assert.AreEqual("Cykel är ingen giltig biltyp", e.Message);
             }
         }
 
@@ -101,15 +101,17 @@ namespace CarRentTest
         public void TestSetDate_Ayaz()
         {
             //TestSetDate(Testing Formats...)
-            rent.StartDate = DateTime.Parse("2016, 02, 17");
-            Assert.AreEqual(DateTime.Today, rent.StartDate);
+            // Kommer endast fungera en gång på rätt datum. Detta testet är helt meningslöst.
+                // rent.StartDate = DateTime.Parse("2016, 02, 15");
+                // Assert.AreEqual(DateTime.Today, rent.StartDate);
+
+            rent.StartDate = DateTime.Today;
 
             var format1 = DateTime.Parse("2016 02 17");
             var format2 = DateTime.Parse("2016/02/17");
 
             Assert.AreEqual(format1, rent.StartDate);
             Assert.AreEqual(format2, rent.StartDate);
-            
             
         }
 
@@ -144,11 +146,12 @@ namespace CarRentTest
 
         [TestMethod]
         public void TestCheckBookingIsValidCorrect_Ayaz()
+
         {
             //Test Checking if Booking is Valid
 
-            rent.StartDate = DateTime.Parse("2016, 02, 15");
-            rent.EndDate = DateTime.Parse("2016, 02, 15");
+            rent.StartDate = DateTime.Parse("2017, 02, 17");
+            rent.EndDate = DateTime.Parse("2017, 02, 17");
             rent.ChooseCar("sportcar");
             rent.ValidatingInputValue();
 
