@@ -58,7 +58,7 @@ namespace CarRentTest
             Assert.IsTrue(rent.SelectedCar is SportCar);
 
             // Make sure selected car is available to rent
-            Assert.IsFalse(rent.SelectedCar.IsRented);
+            Assert.IsTrue(rent.SelectedCar.IsRented);
         }
 
         [TestMethod]
