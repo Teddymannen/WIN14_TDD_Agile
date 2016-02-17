@@ -75,12 +75,12 @@ namespace CarRentTest
             try
             {
                 // Testa välja bil med okänd biltyp
-                var car = rent.ChooseCar("Trabant");
+                var car = rent.ChooseCar("Cykel");
             }
             catch (ArgumentException e)
             {
                 // Fånga upp och kolla att felmeddelandet är korrekt
-                Assert.AreEqual("Trabant är ingen giltig biltyp", e.Message);
+                Assert.AreEqual("Cykel är ingen giltig biltyp", e.Message);
             }
         }
 
