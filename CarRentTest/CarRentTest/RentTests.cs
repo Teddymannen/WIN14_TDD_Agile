@@ -101,9 +101,12 @@ namespace CarRentTest
         public void TestSetDate_Ayaz()
         {
             //TestSetDate(Testing Formats...)
-            rent.StartDate = DateTime.Parse("2016, 02, 17");
-            Assert.AreEqual(DateTime.Today, rent.StartDate);
+            // Kommer endast fungera en gång på rätt datum. Detta testet är helt meningslöst.
+                // rent.StartDate = DateTime.Parse("2016, 02, 15");
+                // Assert.AreEqual(DateTime.Today, rent.StartDate);
 
+            rent.StartDate = DateTime.Today;
+            
             var format1 = DateTime.Parse("2016 02 17");
             var format2 = DateTime.Parse("2016/02/17");
 
