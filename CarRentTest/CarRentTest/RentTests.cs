@@ -58,7 +58,7 @@ namespace CarRentTest
             Assert.IsTrue(rent.SelectedCar is SportCar);
 
             // Make sure selected car is available to rent
-            Assert.IsTrue(rent.SelectedCar.IsRented);
+            Assert.IsFalse(rent.SelectedCar.IsRented);
         }
 
         [TestMethod]
@@ -106,7 +106,7 @@ namespace CarRentTest
                 // Assert.AreEqual(DateTime.Today, rent.StartDate);
 
             rent.StartDate = DateTime.Today;
-
+            
             var format1 = DateTime.Parse("2016 02 17");
             var format2 = DateTime.Parse("2016/02/17");
 
