@@ -98,8 +98,8 @@ public class Rent
                 {
                     MessageBox.Show("Du har ej angivit godkänd typ av bil");
                 }
-            else
-                MessageBox.Show("0 i värde är ej tillåtet");
+            //else
+            //    MessageBox.Show("0 i värde är ej tillåtet");
 
         }
         catch (FormatException)
